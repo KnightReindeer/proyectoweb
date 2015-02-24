@@ -1,0 +1,15 @@
+sudo su
+pip install Django==1.6.5
+
+comprobacion:
+python
+>>> import django
+>>> print(django.get_version())
+>>>exit()
+
+username: equipo
+contraseña:
+
+para arrancar el servidor de pruebas de django:
+python manage.py runserver
+
