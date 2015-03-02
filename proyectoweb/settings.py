@@ -13,6 +13,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -26,8 +27,14 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+from unipath import Path
+RUTA_PROYECTO = Path(__file__).ancestor(2)
 
 # Application definition
+
+TEMPLATE_DIRS=(
+    RUTA_PROYECTO.child('templates')
+)
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -37,6 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.inicio',
+    'apps.calificaciones',
+    'apps.pizarron',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,6 +72,8 @@ DATABASES = {
     }
 }
 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -80,4 +91,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+MEDIA_ROOT = RUTA_PROYECTO.child('media')
+MEDIA_URL = 'http://127.0.0.1:8000/media/'
+
 STATIC_URL = '/static/'
+
+

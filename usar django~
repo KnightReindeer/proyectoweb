@@ -13,9 +13,6 @@ python
 username: equipo
 contraseña:
 
-actualizar la db
-python manage.py runserver
-
 para arrancar el servidor de pruebas de django:
 python manage.py runserver
 
