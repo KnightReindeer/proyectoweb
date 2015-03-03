@@ -4,7 +4,7 @@ from django.db import models
 
 class Profesor(models.Model):
 	nombre = models.CharField(max_length=50, blank=True)
-	curp = models.CharField(max_length=45, blank=True)
+	clavepresupuestal = models.CharField(max_length=45, blank=True)
 	fechanacimiento = models.DateField(blank=True, null=True)
 	
 	def __unicode__(self):

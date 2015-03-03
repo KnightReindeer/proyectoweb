@@ -14,7 +14,7 @@ username: equipo
 contraseña:
 
 actualizar la db
-python manage.py runserver
+python manage.py syndb
 
 para arrancar el servidor de pruebas de django:
 python manage.py runserver
