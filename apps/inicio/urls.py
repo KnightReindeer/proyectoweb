@@ -5,7 +5,7 @@ from .views import index, reglamento, estructura
 urlpatterns = patterns('',
        url(r'^$', index.as_view()),
        url(r'^reglamento/$',reglamento.as_view()),
-       url(r'^estructura organica/$',estructura.as_view()),
+       #url(r'^estructura organica/$',estructura.as_view()),
 
        url(r'^login/$', 'django.contrib.auth.views.login',{'template_name':'inicio/login.html'},name = 'login'),
        url(r'^cerrar/$', 'django.contrib.auth.views.logout_then_login',name = 'logout'),
