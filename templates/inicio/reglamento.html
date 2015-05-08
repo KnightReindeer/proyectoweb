@@ -289,7 +289,7 @@
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="index.html" class="navbar-form">Home</a></li>
+                <li><a href="/" class="navbar-form">Home</a></li>
                 <li><a href="pizarra.html">Pizarra</a></li>
                
                 <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
@@ -315,7 +315,11 @@
              
             <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><img src="{{MEDIA_URL}}bootstrap/img/user.png" alt=""> Sign Up</a></li>
-        <li><a href="/login/"><img src="{{MEDIA_URL}}bootstrap/img/logi.png" alt=""> Login</a></li>
+        {% if user.is_authenticated %}
+          
+          {% else %}
+         <li class="active"><li><a href="/login/"><img src="{{MEDIA_URL}}bootstrap/img/logi.png" alt=""> Login</a></li>
+          {% endif %}
       </ul>
                
             </div><!--/.nav-collapse -->

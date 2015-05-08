@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Personal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles -->
+  <link href="{{MEDIA_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="{{MEDIA_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+ .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(26,116,251,.25);
+         -moz-box-shadow: 0 2px 10px rgba(26,116,251,.25);
+              box-shadow: 0 2px 10px rgba(26,116,251,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(26,116,251,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+    
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+
+    }
+    </style>
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+    <![endif]-->
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{MEDIA_URL}}bootstrap/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{MEDIA_URL}}bootstrap/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{MEDIA_URL}}bootstrap/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="{{MEDIA_URL}}bootstrap/ico/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="{{MEDIA_URL}}bootstrap/ico/favicon.png">
+  <script type="text/javascript" src="{{MEDIA_URL}}ScriptLibrary/jquery-latest.pack.js"></script>
+  <script type="text/javascript" src="{{MEDIA_URL}}bootstrap/js/bootstrap.js"></script>
+  </head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Primaria Indepencia</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+               <li><a href="/">Home</a></li>
+                <li><a href="pizarra.html">Pizarra</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mas <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="/reglamento/">Directorio</a></li>
+                  <li><a href="/reglamento/">Estructura Organica</a></li>
+                    <li><a href="/reglamento/">Normatividad</a></li>
+                    <li><a href="/reglamento/">Contacto</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Alumnos</li>
+                    <li><a href="/calificaciones/">Calificaciones</a></li>
+                    <li><a href="#">Pizarron</a></li>
+                  </ul>
+                </li><!--
+                <form class="navbar-search pull-right" action="" pmbx_context="8DA983BE-E93E-4FBC-87BE-5793F0A2816D">
+                  <input type="text" class="search-query span2" placeholder="Search" value="" pmbx_context="F9243E29-1A06-4AAE-8BFA-A207705FC142">
+                    </form> -->
+           
+              </ul>
+            <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+          
+          {% else %}
+         <li class="active"><li><a href="/login/"><img src="{{MEDIA_URL}}bootstrap/img/logi.png" alt=""> Login</a></li>
+          {% endif %}
+      </ul>
+            </div><!--/.nav-collapse -->
+            
+       			
+            <p align="right" class="navbar-text">           
+            <a href="#" class="navbar-link">{{user.username}}</a></p>
+          </div><!-- /.navbar-inner -->
+          
+          
+          
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+<table width="200" border="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+  <div class="well">
+<div class="panel panel-info">
+  <div class="panel-heading">
+  {% if user.is_authenticated %}
+   <h3 class="panel-title">Personal&nbsp;&nbsp;<span class="badge badge-info">5</span></h3>
+    
+  </div>
+  <div class="panel-body">
+ 
+<table class="table table-bordered table-hover sortable-theme-bootstrap" data-sortable="true" data-toggle="table">
+
+    <thead>
+    <tr>
+        <th>username</th>
+        <th>nombre</th>
+        <th>apellidop</th>
+        <th>apellidom</th>
+        <th>clavepresupuestal</th>
+        <th>telefono</th>
+        <th>direccion</th>
+        <th>curp</th>
+        <th>aingresep</th>
+        <th>aingreescuela</th>
+        <th>aingrezona</th>
+        <th>fechanacimiento</th>
+        <th>rfc</th>
+        <th>cargo</th>
+    </tr>
+    </thead>
+   
+  <tbody>
+
+  {% for persona in personal %}
+  <tr class="info">
+        <td>{{persona.usuario}}</td>
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.apellidop}}</td>
+        <td>{{persona.apellidom}}</td>
+        <td>{{persona.clavepresupuestal}}</td>
+        <td>{{persona.telefono}}</td>
+        <td>{{persona.direccion}}</td>
+        <td>{{persona.curp}}</td>
+        <td>{{persona.aingresep}}</td>
+        <td>{{persona.aingreescuela}}</td>
+        <td>{{persona.aingrezona}}</td>
+        <td>{{persona.fechanacimiento}}</td>
+        <td>{{persona.rfc}}</td>
+        <td>{{persona.cargo}}</td>
+        <td>{{persona.last_login_1}}</td>
+        
+ 
+    <td><a href="/admin/partidos/partido/"><i class="icon-pencil"></i></a> 
+    <a href="/admin/partidos/partido/"><i class="icon-minus-sign"></i></a></td>
+    {% endfor %}
+  </tr>
+  
+<tr>
+ 
+  </tr>
+
+</tbody>
+
+   <td><a href="/registrarpersonal/"><i class="icon-plus-sign"></a></td> 
+
+</table>
+
+{% else %}
+
+    <h2 class="form-signin-heading">Usted no esta autorizado</h2>
+    {% endif %}
+
+  </div>
+  
+
+</div>
+</div>
+
+	
+    
+
+      
+
+
+      <!-- FOOTER -->
+      
+
+    </div><!-- /.container -->
+
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="{{MEDIA_URL}}bootstrap/js/holder/holder.js"></script>
+  </body>
+</html>

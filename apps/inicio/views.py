@@ -20,4 +20,4 @@ class estructura(TemplateView):
 class Login(TemplateView):
 	template_name = 'inicio/login.html'
 	#model= Perfiles
-	success_url= reverse_lazy('login') 
+	success_url= reverse_lazy('index') 

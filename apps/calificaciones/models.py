@@ -1,14 +1,17 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class Personal(models.Model):
+	usuario = models.OneToOneField(User)
 	nombre = models.CharField(max_length=50, blank=True)
 	apellidop = models.CharField(max_length=50, blank=True)
 	apellidom = models.CharField(max_length=50, blank=True)
 	clavepresupuestal = models.CharField(max_length=50, blank=True)
 	telefono = models.CharField(max_length=13, blank=True)
 	direccion = models.CharField(max_length=80, blank=True)
+	correo = models.CharField(max_length=20, blank=True)
 	curp = models.CharField(max_length=50, blank=True)
 	aingresep = models.CharField(max_length=6, blank=True)
 	aingreescuela = models.CharField(max_length=6, blank=True)

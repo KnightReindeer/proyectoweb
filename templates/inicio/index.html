@@ -298,14 +298,18 @@
               </ul>
             <ul class="nav navbar-nav navbar-right">
         <li><a href="nuevouser.html"><img src="{{MEDIA_URL}}bootstrap/img/user.png" alt=""> Sign Up</a></li>
+          {% if user.is_authenticated %}
+          
+          {% else %}
          <li class="active"><li><a href="/login/"><img src="{{MEDIA_URL}}bootstrap/img/logi.png" alt=""> Login</a></li>
+          {% endif %}
       </ul>
 
             </div><!--/.nav-collapse -->
             
        			
             <p align="right" class="navbar-text">           
-            <a href="/" class="navbar-link">{{user.username}}</a></p>
+            <a href="/admin/logout/" class="navbar-link">{{user.username}}</a></p>
           </div><!-- /.navbar-inner -->
           
           
