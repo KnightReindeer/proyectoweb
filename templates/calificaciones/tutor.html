@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8">
-  <title>Personal</title>
+  <title>Tutor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -217,7 +217,7 @@
 <div class="panel panel-info">
   <div class="panel-heading">
   {% if user.is_authenticated %}
-   <h3 class="panel-title">Personal&nbsp;&nbsp;<span class="badge badge-info">{{personal.count}}</span></h3>
+   <h3 class="panel-title">Tutores&nbsp;&nbsp;<span class="badge badge-info">{{tutores.count}}</span></h3>
     
   </div>
   <div class="panel-body">
@@ -226,45 +226,29 @@
 
     <thead>
     <tr>
-        <th>username</th>
-        <th>nombre</th>
-        <th>apellidop</th>
-        <th>apellidom</th>
-        <th>clavepresupuestal</th>
-        <th>telefono</th>
+        <th>nombre completo</th>
+        <th>ocupacion</th>
         <th>direccion</th>
-        <th>curp</th>
-        <th>aingresep</th>
-        <th>aingreescuela</th>
-        <th>aingrezona</th>
-        <th>fechanacimiento</th>
-        <th>rfc</th>
-        <th>cargo</th>
+        <th>telefono casa</th>
+        <th>telefono celular</th>
+        <th>identificador</th>
+        <th></th>
     </tr>
     </thead>
    
   <tbody>
 
-  {% for persona in personal %}
+  {% for tutor in tutores %}
   <tr class="info">
-        <td>{{persona.usuario}}</td>
-        <td>{{persona.nombre}}</td>
-        <td>{{persona.apellidop}}</td>
-        <td>{{persona.apellidom}}</td>
-        <td>{{persona.clavepresupuestal}}</td>
-        <td>{{persona.telefono}}</td>
-        <td>{{persona.direccion}}</td>
-        <td>{{persona.curp}}</td>
-        <td>{{persona.aingresep}}</td>
-        <td>{{persona.aingreescuela}}</td>
-        <td>{{persona.aingrezona}}</td>
-        <td>{{persona.fechanacimiento}}</td>
-        <td>{{persona.rfc}}</td>
-        <td>{{persona.cargo}}</td>
+        <td>{{tutor.nombreT}}&nbsp;{{tutor.apellidoPt}}&nbsp;{{tutor.apellidoMt}}</td>
+        <td>{{tutor.ocupacion}}</td>
+        <td>{{tutor.direccion}}</td>
+        <td>{{tutor.telefonoCasa}}</td>
+        <td>{{tutor.telefonoCel}}</td>
+        <td>{{tutor.idT}}</td>
           
- 
-    <td><a href="/admin/partidos/partido/"><i class="icon-pencil"></i></a> 
-    <a href="/admin/partidos/partido/"><i class="icon-minus-sign"></i></a></td>
+    <td><a href="/"><i class="icon-pencil"></i></a> 
+    <a href="/"><i class="icon-minus-sign"></i></a></td>
     {% endfor %}
   </tr>
   
@@ -273,8 +257,6 @@
   </tr>
 
 </tbody>
-
-   <td><a href="/registrarpersonal/"><i class="icon-plus-sign"></a></td> 
 
 </table>
 

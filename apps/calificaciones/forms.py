@@ -1,9 +1,10 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import  Tutor, Grupo
 
 class UserForm(UserCreationForm):
-	nombre = forms.CharField(label = "NOMBRE COMPLETO")
+	nombre = forms.CharField(label = "NOMBRE")
 	apellidop = forms.CharField(label = "APELLIDO PATERNO")
 	apellidom = forms.CharField(label = "APELLIDO MATERNO")
 	clavepresupuestal = forms.CharField(label = "CLAVE PRESUPUESTAL")
@@ -17,6 +18,18 @@ class UserForm(UserCreationForm):
 	fechanacimiento = forms.DateField(label="FECHA DE NACIMIENTO")
 	rfc = forms.CharField(label = "RFC")
 	cargo = forms.CharField(label = "CARGO")
-	
+
+class UseraForm(UserCreationForm):
+	nombrea = forms.CharField(label = "NOMBRE")
+	apellidoPa = forms.CharField(label = "APELLIDO PATERNO")
+	apellidoMa = forms.CharField(label = "APELLIDO MATERNO")
+	sexo = forms.CharField(label = "SEXO")
+	correo = forms.CharField(label = "CORREO")
+	curp = forms.CharField(label = "CURP")
+	fechanacimiento = forms.DateField(label="FECHA DE NACIMIENTO")
+	rh = forms.CharField(label = "Rh")
+	tutor1 = forms.ModelChoiceField(queryset= Tutor.objects.all())
+	idgrupo = forms.ModelChoiceField(queryset= Grupo.objects.all())
+
 
 	

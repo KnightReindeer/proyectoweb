@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.generic import CreateView,TemplateView,ListView,FormView
-from .models import Boleta, Tarea, Personal
+from .models import Boleta1, Tarea, Personal, Alumno, Tutor, Grupo
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -11,13 +11,13 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 
-from .forms import UserForm 
+from .forms import UserForm,UseraForm 
 
 # Create your views here.
 #@login_required()
 class registrarcalificaciones (CreateView):
 	template_name = 'calificaciones/registrarcalificaciones.html'
-	model= Boleta
+	model= Boleta1
 	success_url= reverse_lazy('calificaciones') #una vez que se ha registrado el 
 								#formulario en la bd decide a donde 
 								#te mandara
@@ -50,15 +50,59 @@ class registrarpersonal(FormView):
 		return super(registrarpersonal, self).form_valid(form)
 
 
+class registraralumno(FormView):
+	template_name = 'calificaciones/registraralumnos.html'
+	form_class = UseraForm
+	success_url= reverse_lazy('alumno') 
+
+	def form_valid(self, form):
+		perfila = Alumno()
+		perfila.nombrea = form.cleaned_data['nombrea']
+		perfila.apellidoPa = form.cleaned_data['apellidoPa']
+		perfila.apellidoMa = form.cleaned_data['apellidoMa']
+		perfila.sexo = form.cleaned_data['sexo']
+		perfila.correo = form.cleaned_data['correo']
+		perfila.curp = form.cleaned_data['curp']
+		perfila.fechanacimiento = form.cleaned_data['fechanacimiento']
+		perfila.rh = form.cleaned_data['rh']
+		perfila.tutor1 = form.cleaned_data['tutor1']
+		perfila.idgrupo = form.cleaned_data['idgrupo']
+		usera = form.save()
+		perfila.usuario  = usera
+  		perfila.save()
+		return super(registraralumno, self).form_valid(form)
 
 
-#@login_required()
+class registrartutor (CreateView):
+	template_name = 'calificaciones/registrartutor.html'
+	model= Tutor
+	success_url= reverse_lazy('registraralumno')
+
+class tutor(ListView):
+	template_name = 'calificaciones/tutor.html'
+	model= Tutor
+	context_object_name = 'tutores'
+
+class registrargrupo(CreateView):
+	template_name = 'calificaciones/registrargrupo.html'
+	model= Grupo
+	success_url= reverse_lazy('grupo')
+
+class grupo(ListView):
+	template_name = 'calificaciones/grupo.html'
+	model= Grupo
+	context_object_name = 'grupos'
+
 class calificaciones(ListView):
 	template_name = 'calificaciones/calificaciones.html'
-	model= Boleta
+	model= Boleta1
 	context_object_name = 'calificaciones'
 ####aqui mismose pueden crear la cantida de vistas que uno quiera
 
+class alumno(ListView):
+	template_name = 'calificaciones/alumnos.html'
+	model= Alumno
+	context_object_name = 'alumnos'
 
 class personal(ListView):
 	template_name = 'calificaciones/personal.html'

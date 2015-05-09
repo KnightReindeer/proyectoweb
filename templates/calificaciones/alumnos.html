@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8">
-  <title>Personal</title>
+  <title>Alumnos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -217,7 +217,7 @@
 <div class="panel panel-info">
   <div class="panel-heading">
   {% if user.is_authenticated %}
-   <h3 class="panel-title">Personal&nbsp;&nbsp;<span class="badge badge-info">{{personal.count}}</span></h3>
+   <h3 class="panel-title">Alumnos&nbsp;&nbsp;<span class="badge badge-info">{{alumnos.count}}</span></h3>
     
   </div>
   <div class="panel-body">
@@ -230,41 +230,37 @@
         <th>nombre</th>
         <th>apellidop</th>
         <th>apellidom</th>
-        <th>clavepresupuestal</th>
-        <th>telefono</th>
-        <th>direccion</th>
+        <th>sexo</th>
+        <th>correo</th>
         <th>curp</th>
-        <th>aingresep</th>
-        <th>aingreescuela</th>
-        <th>aingrezona</th>
         <th>fechanacimiento</th>
-        <th>rfc</th>
-        <th>cargo</th>
+        <th>rh</th>
+        <th>tutor</th>
+        <th>grupo</th>
+        <th></th>
     </tr>
     </thead>
    
   <tbody>
 
-  {% for persona in personal %}
+  {% for alumno in alumnos %}
   <tr class="info">
-        <td>{{persona.usuario}}</td>
-        <td>{{persona.nombre}}</td>
-        <td>{{persona.apellidop}}</td>
-        <td>{{persona.apellidom}}</td>
-        <td>{{persona.clavepresupuestal}}</td>
-        <td>{{persona.telefono}}</td>
-        <td>{{persona.direccion}}</td>
-        <td>{{persona.curp}}</td>
-        <td>{{persona.aingresep}}</td>
-        <td>{{persona.aingreescuela}}</td>
-        <td>{{persona.aingrezona}}</td>
-        <td>{{persona.fechanacimiento}}</td>
-        <td>{{persona.rfc}}</td>
-        <td>{{persona.cargo}}</td>
+        <td>{{alumno.usuario}}</td>
+        <td>{{alumno.nombrea}}</td>
+        <td>{{alumno.apellidoPa}}</td>
+        <td>{{alumno.apellidoMa}}</td>
+        <td>{{alumno.sexo}}</td>
+        <td>{{alumno.correo}}</td>
+        <td>{{alumno.curp}}</td>
+        <td>{{alumno.fechanacimiento}}</td>
+        <td>{{alumno.rh}}</td>
+        <td>{{alumno.tutor1}}</td>
+        <td>{{alumno.idgrupo}}</td>
+
           
  
-    <td><a href="/admin/partidos/partido/"><i class="icon-pencil"></i></a> 
-    <a href="/admin/partidos/partido/"><i class="icon-minus-sign"></i></a></td>
+    <td><a href="/"><i class="icon-pencil"></i></a> 
+    <a href="/"><i class="icon-minus-sign"></i></a></td>
     {% endfor %}
   </tr>
   
@@ -274,7 +270,7 @@
 
 </tbody>
 
-   <td><a href="/registrarpersonal/"><i class="icon-plus-sign"></a></td> 
+   <td><a href="/registraralumno/"><i class="icon-plus-sign"></a></td> 
 
 </table>
 

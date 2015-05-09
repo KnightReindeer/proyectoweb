@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8">
-  <title>Personal</title>
+  <title>Registrar grupo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -213,82 +213,34 @@
   </tr>
 </table>
 
-  <div class="well">
-<div class="panel panel-info">
-  <div class="panel-heading">
-  {% if user.is_authenticated %}
-   <h3 class="panel-title">Personal&nbsp;&nbsp;<span class="badge badge-info">{{personal.count}}</span></h3>
-    
-  </div>
-  <div class="panel-body">
- 
-<table class="table table-bordered table-hover sortable-theme-bootstrap" data-sortable="true" data-toggle="table">
 
-    <thead>
-    <tr>
-        <th>username</th>
-        <th>nombre</th>
-        <th>apellidop</th>
-        <th>apellidom</th>
-        <th>clavepresupuestal</th>
-        <th>telefono</th>
-        <th>direccion</th>
-        <th>curp</th>
-        <th>aingresep</th>
-        <th>aingreescuela</th>
-        <th>aingrezona</th>
-        <th>fechanacimiento</th>
-        <th>rfc</th>
-        <th>cargo</th>
-    </tr>
-    </thead>
-   
-  <tbody>
 
-  {% for persona in personal %}
-  <tr class="info">
-        <td>{{persona.usuario}}</td>
-        <td>{{persona.nombre}}</td>
-        <td>{{persona.apellidop}}</td>
-        <td>{{persona.apellidom}}</td>
-        <td>{{persona.clavepresupuestal}}</td>
-        <td>{{persona.telefono}}</td>
-        <td>{{persona.direccion}}</td>
-        <td>{{persona.curp}}</td>
-        <td>{{persona.aingresep}}</td>
-        <td>{{persona.aingreescuela}}</td>
-        <td>{{persona.aingrezona}}</td>
-        <td>{{persona.fechanacimiento}}</td>
-        <td>{{persona.rfc}}</td>
-        <td>{{persona.cargo}}</td>
-          
- 
-    <td><a href="/admin/partidos/partido/"><i class="icon-pencil"></i></a> 
-    <a href="/admin/partidos/partido/"><i class="icon-minus-sign"></i></a></td>
-    {% endfor %}
-  </tr>
-  
-<tr>
- 
-  </tr>
 
-</tbody>
+ <div class="container">
+ {% if user.is_authenticated %}
 
-   <td><a href="/registrarpersonal/"><i class="icon-plus-sign"></a></td> 
+		<form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
+      {% csrf_token %} 
 
-</table>
+        <h2 class="form-signin-heading">Nuevo Grupo</h2>
 
-{% else %}
+        <input type="text" 
+        required  name="gradogrupo" placeholder="1A" class="input-block-level" >{{form.gradogrupo.errors}}
 
-    <h2 class="form-signin-heading">Usted no esta autorizado</h2>
-    {% endif %}
+        Curp Profesor:&nbsp;&nbsp;{{form.idprofesor}} &nbsp;&nbsp;<a href="/registrarpersonal/"><i class="icon-plus-sign"></i></a> &nbsp;&nbsp;&nbsp;
 
-  </div>
-  
+        <button class="btn btn-large btn-primary" type="submit">Registráte</button>
+        
+		</form>
+		{% else %}
 
-</div>
-</div>
+		<h2 class="form-signin-heading">Usted no esta autorizado</h2>
+		{% endif %}
 
+
+      
+
+    </div> <!-- /container -->
 	
     
 

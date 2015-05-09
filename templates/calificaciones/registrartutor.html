@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8">
-  <title>Personal</title>
+  <title>Registrar tutor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -213,82 +213,49 @@
   </tr>
 </table>
 
-  <div class="well">
-<div class="panel panel-info">
-  <div class="panel-heading">
-  {% if user.is_authenticated %}
-   <h3 class="panel-title">Personal&nbsp;&nbsp;<span class="badge badge-info">{{personal.count}}</span></h3>
-    
-  </div>
-  <div class="panel-body">
- 
-<table class="table table-bordered table-hover sortable-theme-bootstrap" data-sortable="true" data-toggle="table">
 
-    <thead>
-    <tr>
-        <th>username</th>
-        <th>nombre</th>
-        <th>apellidop</th>
-        <th>apellidom</th>
-        <th>clavepresupuestal</th>
-        <th>telefono</th>
-        <th>direccion</th>
-        <th>curp</th>
-        <th>aingresep</th>
-        <th>aingreescuela</th>
-        <th>aingrezona</th>
-        <th>fechanacimiento</th>
-        <th>rfc</th>
-        <th>cargo</th>
-    </tr>
-    </thead>
-   
-  <tbody>
 
-  {% for persona in personal %}
-  <tr class="info">
-        <td>{{persona.usuario}}</td>
-        <td>{{persona.nombre}}</td>
-        <td>{{persona.apellidop}}</td>
-        <td>{{persona.apellidom}}</td>
-        <td>{{persona.clavepresupuestal}}</td>
-        <td>{{persona.telefono}}</td>
-        <td>{{persona.direccion}}</td>
-        <td>{{persona.curp}}</td>
-        <td>{{persona.aingresep}}</td>
-        <td>{{persona.aingreescuela}}</td>
-        <td>{{persona.aingrezona}}</td>
-        <td>{{persona.fechanacimiento}}</td>
-        <td>{{persona.rfc}}</td>
-        <td>{{persona.cargo}}</td>
+
+ <div class="container">
+ {% if user.is_authenticated %}
+
+		<form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
+      {% csrf_token %} 
+
+        <h2 class="form-signin-heading">Nuevo Personal</h2>
+
+        <input type="text" 
+        required  name="nombreT" placeholder="Nombre" class="input-block-level" >{{form.nombreT.errors}}
+
+        
+        <input type="text" 
+        required name="apellidoPt" placeholder="Apellido paterno" class="input-block-level" >{{form.apellidoPt.errors}}
+
+        <input type="text" required name="apellidoMt" placeholder="Apellido Materno" class="input-block-level" >{{form.apellidoMt.errors}}
           
- 
-    <td><a href="/admin/partidos/partido/"><i class="icon-pencil"></i></a> 
-    <a href="/admin/partidos/partido/"><i class="icon-minus-sign"></i></a></td>
-    {% endfor %}
-  </tr>
+        <input type="text" required name="ocupacion" placeholder="Ocupacion" class="input-block-level" >{{form.ocupacion.errors}}
+
+        <input type="text" required
+        name="direccion" placeholder="Direccion" class="input-block-level" >{{form.direccion.errors}}
+
+        <input type="text" required name="telefonoCasa" placeholder="Telefono Casa" class="input-block-level" >{{form.telefonoCasa.errors}}
+
+        <input type="text" required name="telefonoCel" placeholder="Telefono Celular" class="input-block-level" >{{form.telefonoCel.errors}}
+
+        <input type="text" required name="idT"   placeholder="idT" class="input-block-level" >{{form.idT.errors}}
   
-<tr>
- 
-  </tr>
+        <button class="btn btn-large btn-primary" type="submit">Registráte</button>
+        
+		</form>
+		{% else %}
 
-</tbody>
+		<h2 class="form-signin-heading">Usted no esta autorizado</h2>
+		{% endif %}
 
-   <td><a href="/registrarpersonal/"><i class="icon-plus-sign"></a></td> 
 
-</table>
+      
 
-{% else %}
-
-    <h2 class="form-signin-heading">Usted no esta autorizado</h2>
-    {% endif %}
-
-  </div>
-  
-
-</div>
-</div>
-
+    </div> <!-- /container -->
 	
     
 
