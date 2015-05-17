@@ -138,4 +138,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = Path(__file__).ancestor(1).child('media')
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
+MEDIA_URL = '/media/'
