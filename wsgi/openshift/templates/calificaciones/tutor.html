@@ -11,12 +11,13 @@ Tutor
   <div class="well">
 <div class="panel panel-info">
   <div class="panel-heading">
-  {% if user.is_authenticated %}
+  {% if perms.calificaciones.add_tutor%}
    <h3 class="panel-title">Tutores&nbsp;&nbsp;<span class="badge badge-info">{{tutores.count}}</span></h3>
     
   </div>
   <div class="panel-body">
  
+
 <table class="table table-bordered table-hover sortable-theme-bootstrap" data-sortable="true" data-toggle="table">
 
     <thead>

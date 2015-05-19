@@ -6,7 +6,7 @@ Registrar tutor
    
 {% block content %}
  <div class="container">
- {% if user.is_authenticated %}
+{% if perms.calificaciones.add_tutor%}
 
 		<form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
       {% csrf_token %} 

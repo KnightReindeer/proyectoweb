@@ -43,7 +43,6 @@ class registrarpersonal(FormView):
 		perfil.fechanacimiento = form.cleaned_data['fechanacimiento']
 		perfil.rfc = form.cleaned_data['rfc']
 		perfil.cargo = form.cleaned_data['cargo']
-
 		user = form.save()
 		perfil.usuario  = user
   		perfil.save()

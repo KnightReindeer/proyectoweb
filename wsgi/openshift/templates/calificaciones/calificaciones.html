@@ -2,21 +2,22 @@
 {% block title%}Calificaciones{% endblock%}
 
 {% block content %}
-<table width="200" border="0">
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+
+
+
+{% if user.is_authenticated %}
+
+{% if perms.calificaciones.add_boleta1%}
+
+<h2 class="form-signin-heading">Usted PUEDE CREAR BOLETAS</h2>
+
+{% else %}
+<h2 class="form-signin-heading">Usted SOLO puede VER </h2>
+{% endif %}
+
+{% else %}
+<h2 class="form-signin-heading">Usted no esta autorizado</h2>
+
+{% endif %}
+
 {% endblock%}
