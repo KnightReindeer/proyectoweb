@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title%}
+{% block title%}e
 Registrar Alumno
 {% endblock%}
    
@@ -20,25 +20,25 @@ Registrar Alumno
         Grupo:&nbsp;&nbsp;&nbsp;&nbsp;{{form.idgrupo}}
 
         <input type="text" 
-        required  name="username" placeholder="Nombre de usuario" class="input-block-level" >{{form.username.errors}}
+        required  name="username" placeholder="Nombre de usuario" class="input-block-level" PATTERN="[a-zA-Z0-9_-.]*$" REQUIRED/>{{form.username.errors}}
 
         <input type="text" 
-        required  name="nombrea" placeholder="Nombre" class="input-block-level" >{{form.nombrea.errors}}
+        required  name="nombrea" placeholder="Nombre" class="input-block-level" onkeypress="upperCase('nombrea');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.nombrea.errors}}
 
         
         <input type="text" 
-        required name="apellidoPa" placeholder="Apellido paterno" class="input-block-level" >{{form.apellidoPa.errors}}
+        required name="apellidoPa" placeholder="Apellido paterno" class="input-block-level" onkeypress="upperCase('apellidoPa');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidoPa.errors}}
 
-        <input type="text" required name="apellidoMa" placeholder="Apellido Materno" class="input-block-level" >{{form.apellidoMa.errors}}
+        <input type="text" required name="apellidoMa" placeholder="Apellido Materno" class="input-block-level" onkeypress="upperCase('apellidoMa');" onchange="crearID('apellidoPa','apellidoMa','nombrea');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidoMa.errors}}
 
         <select name="sexo" class="form-control">
         <option>MASCULINO</option>
         <option>FEMENINO</option>
         </select>{{form.sexo.errors}}
 
-        <input type="text" required name="correo" placeholder="Correo electronico" class="input-block-level" >{{form.correo.errors}}
+        <input type="text" required name="correo" placeholder="Correo electronico" class="input-block-level" PATTERN="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]+$" REQUIRED/>{{form.correo.errors}}
 
-        <input type="text" required name="curp" placeholder="Curp" class="input-block-level" >{{form.curp.errors}}
+        <input type="text" required name="curp" placeholder="Curp" class="input-block-level" onkeypress="upperCase('curp');" PATTERN="([a-zA-Z]{4})+([0-9]{6})+([a-zA-Z]{6})+([0-9])*$" REQUIRED/>{{form.curp.errors}}
 
         <input type="date" required name="fechanacimiento"  
           class="col_12" placeholder="2014-10-26" class="input-block-level" >{{form.fechanacimiento.errors}}
@@ -71,5 +71,6 @@ Registrar Alumno
       
 
     </div> <!-- /container -->
+	
 	
 {% endblock%}

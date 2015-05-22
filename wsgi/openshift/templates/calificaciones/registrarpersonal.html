@@ -18,40 +18,40 @@ Registrar Personal
         <h2 class="form-signin-heading">Nuevo Personal</h2>
 
         <input type="text" 
-        required  name="username" placeholder="Nombre de usuario" class="input-block-level" >{{form.username.errors}}
+        required  name="username" placeholder="Nombre de usuario" class="input-block-level" PATTERN="[a-zA-Z0-9_-.]*$" REQUIRED/>{{form.username.errors}}
 
         <input type="text" 
-        required  name="nombre" placeholder="Nombre" class="input-block-level" >{{form.nombre.errors}}
+        required  name="nombre" placeholder="Nombre" class="input-block-level" onkeypress="upperCase('nombre');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.nombre.errors}}
 
         
         <input type="text" 
-        required name="apellidop" placeholder="Apellido paterno" class="input-block-level" >{{form.apellidop.errors}}
+        required name="apellidop" placeholder="Apellido paterno" class="input-block-level" onkeypress="upperCase('apellidop');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidop.errors}}
 
-        <input type="text" required name="apellidom" placeholder="Apellido Materno" class="input-block-level" >{{form.apellidom.errors}}
+        <input type="text" required name="apellidom" placeholder="Apellido Materno" class="input-block-level" onkeypress="upperCase('apellidom');" onchange="crearID('apellidop','apellidom','nombre');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidom.errors}}
           
-        <input type="text" required name="clavepresupuestal" placeholder="Clave presupuestal " class="input-block-level" >{{form.clavepresupuestal.errors}}
+        <input type="text" required name="clavepresupuestal" placeholder="Clave presupuestal " class="input-block-level" PATTERN="[a-zA-Z0-9]*$" REQUIRED/>{{form.clavepresupuestal.errors}}
 
         <input type="text" required
-        name="telefono" placeholder="Telefono" class="input-block-level" >{{form.telefono.errors}}
+        name="telefono" placeholder="Telefono" class="input-block-level" PATTERN="[0-9]{10}" REQUIRED/>{{form.telefono.errors}}
 
-        <input type="text" required name="direccion" placeholder="Direccion" class="input-block-level" >{{form.direccion.errors}}
+        <input type="text" required name="direccion" placeholder="Direccion" class="input-block-level" PATTERN="[a-zA-ZáéíóúüñÁ.,;:'-+_#/\*]+([ a-zA-ZáéíóúüñÁ.,;:'-+_#/\*]+[a-zA-ZáéíóúüñÁ.,;:'-+_#/\*]+$)*$" REQUIRED/>{{form.direccion.errors}}
 
-        <input type="text" required name="correo" placeholder="Correo electronico" class="input-block-level" >{{form.correo.errors}}
+        <input type="text" required name="correo" placeholder="Correo electronico" class="input-block-level" PATTERN="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]+$" REQUIRED/>{{form.correo.errors}}
 
-        <input type="text" required name="curp"   placeholder="Curp" class="input-block-level" >{{form.curp.errors}}
+        <input type="text" required name="curp"   placeholder="Curp" class="input-block-level" onkeypress="upperCase('curp');" PATTERN="([a-zA-Z]{4})+([0-9]{6})+([a-zA-Z]{6})+([0-9])*$" REQUIRED/>{{form.curp.errors}}
 
-        <input type="text" required name="aingresep"   placeholder="Año de ingreso a la SEP" class="input-block-level" >{{form.aingresep.errors}}
+        <input type="text" required name="aingresep"   placeholder="Año de ingreso a la SEP" class="input-block-level" PATTERN="(19|20)+[0-9]{2}" REQUIRED/>{{form.aingresep.errors}}
 
-        <input type="text" required name="aingreescuela"   placeholder="Año de ingreso a la escuela" class="input-block-level" >{{form.aingreescuela.errors}}
+        <input type="text" required name="aingreescuela"   placeholder="Año de ingreso a la escuela" class="input-block-level" PATTERN="(19|20)+[0-9]{2}" REQUIRED/>{{form.aingreescuela.errors}}
 
-        <input type="text" required name="aingrezona"   placeholder="Año de ingreso a la zona" class="input-block-level" >{{form.aingrezona.errors}}
+        <input type="text" required name="aingrezona"   placeholder="Año de ingreso a la zona" class="input-block-level" PATTERN="(19|20)+[0-9]{2}" REQUIRED/>{{form.aingrezona.errors}}
 
         <input type="date" required name="fechanacimiento"  
           class="col_12" placeholder="2014-10-26" class="input-block-level" >{{form.fechanacimiento.errors}}
 
-        <input type="text" required name="rfc"  placeholder="RFC" class="input-block-level" >{{form.rfc.errors}}
+        <input type="text" required name="rfc"  placeholder="RFC" class="input-block-level" onkeypress="upperCase('rfc');">{{form.rfc.errors}}
 
-        <input type="text" required name="cargo"  placeholder="Cargo" class="input-block-level" >{{form.cargo.errors}}
+        <input type="text" required name="cargo"  placeholder="Cargo" class="input-block-level" onkeypress="upperCase('cargo');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.cargo.errors}}
 
         <input type="password" required name="password1" placeholder="CONTRASEÑA" class="input-block-level" > {{form.password1.errors}}
 
@@ -71,6 +71,6 @@ Registrar Personal
 
     </div> <!-- /container -->
 	
-    
+    <script type="text/javascript" src="../../media/bootstrap/js/JSFunctions.js"></script>
 
  {% endblock%}

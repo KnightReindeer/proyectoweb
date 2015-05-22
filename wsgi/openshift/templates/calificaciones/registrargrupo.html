@@ -15,7 +15,7 @@ Registrar grupo
         <h2 class="form-signin-heading">Nuevo Grupo</h2>
 
         <input type="text" 
-        required  name="gradogrupo" placeholder="1A" class="input-block-level" >{{form.gradogrupo.errors}}
+        required  name="gradogrupo" placeholder="1A" class="input-block-level" onkeypress="upperCase('gradogrupo');" PATTERN="[a-zA-Z0-9áéíóúüñÁ.'-]+([ a-zA-Z0-9áéíóúüñÁ.'-]+[a-zA-Z0-9áéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.gradogrupo.errors}}
 
         Curp Profesor:&nbsp;&nbsp;{{form.idprofesor}} &nbsp;&nbsp;<a href="/registrarpersonal/"><i class="icon-plus-sign"></i></a> &nbsp;&nbsp;&nbsp;
 
@@ -28,6 +28,8 @@ Registrar grupo
 		{% endif %}
 
     </div> <!-- /container -->
+	
+	<script type="text/javascript" src="../../media/bootstrap/js/JSFunctions.js"></script>
 	
 {% endblock%}
 
