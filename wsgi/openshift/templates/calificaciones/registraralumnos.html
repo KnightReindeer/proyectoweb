@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
-{% block title%}e
+{% block title%}
 Registrar Alumno
 {% endblock%}
    
@@ -8,7 +8,7 @@ Registrar Alumno
 {% block content %}
 
  <div class="container">
- {% if user.is_authenticated %}
+{% if perms.calificaciones.add_alumno%}
 
 		<form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
       {% csrf_token %} 
@@ -29,9 +29,9 @@ Registrar Alumno
         <input type="text" 
         required name="apellidoPa" placeholder="Apellido paterno" class="input-block-level" onkeypress="upperCase('apellidoPa');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidoPa.errors}}
 
-        <input type="text" required name="apellidoMa" placeholder="Apellido Materno" class="input-block-level" onkeypress="upperCase('apellidoMa');" onchange="crearID('apellidoPa','apellidoMa','nombrea');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidoMa.errors}}
+        <input type="text" required name="apellidoMa" placeholder="Apellido Materno" class="input-block-level" onkeypress="upperCase('apellidoMa');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidoMa.errors}}
 
-        <select name="sexo" class="form-control">
+        Sexo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="sexo" class="form-control">
         <option>MASCULINO</option>
         <option>FEMENINO</option>
         </select>{{form.sexo.errors}}
@@ -40,10 +40,10 @@ Registrar Alumno
 
         <input type="text" required name="curp" placeholder="Curp" class="input-block-level" onkeypress="upperCase('curp');" PATTERN="([a-zA-Z]{4})+([0-9]{6})+([a-zA-Z]{6})+([0-9])*$" REQUIRED/>{{form.curp.errors}}
 
-        <input type="date" required name="fechanacimiento"  
+        Nacimiento:&nbsp;&nbsp;<input type="date" required name="fechanacimiento"  
           class="col_12" placeholder="2014-10-26" class="input-block-level" >{{form.fechanacimiento.errors}}
 
-        <select name="rh" class="form-control">
+        RH:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="rh" class="form-control">
         <option>RH O-</option>
         <option>RH O+</option>
         <option>RH A-</option>

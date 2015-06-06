@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block title%}
 Registrar tutor
@@ -20,18 +20,17 @@ Registrar tutor
         <input type="text" 
         required name="apellidoPt" placeholder="Apellido paterno" class="input-block-level" onkeypress="upperCase('apellidoPt');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidoPt.errors}}
 
-        <input type="text" required name="apellidoMt" placeholder="Apellido Materno" class="input-block-level" onkeypress="upperCase('apellidoMt');" onchange="crearID('apellidoPt','apellidoMt','nombreT');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidoMt.errors}}
+        <input type="text" required name="apellidoMt" placeholder="Apellido Materno" class="input-block-level" onkeypress="upperCase('apellidoMt');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.apellidoMt.errors}}
           
         <input type="text" required name="ocupacion" placeholder="Ocupacion" class="input-block-level" onkeypress="upperCase('ocupacion');" PATTERN="[a-zA-ZáéíóúüñÁ.'-]+([ a-zA-ZáéíóúüñÁ.'-]+[a-zA-ZáéíóúüñÁ.'-]+$)*$" REQUIRED/>{{form.ocupacion.errors}}
 
         <input type="text" required
         name="direccion" placeholder="Direccion" class="input-block-level" PATTERN="[a-zA-ZáéíóúüñÁ.,;:'-+_#/\*]+([ a-zA-ZáéíóúüñÁ.,;:'-+_#/\*]+[a-zA-ZáéíóúüñÁ.,;:'-+_#/\*]+$)*$" REQUIRED/>{{form.direccion.errors}}
 
-        <input type="text" required name="telefonoCasa" placeholder="Telefono Casa" class="input-block-level" PATTERN="[0-9]{7}" REQUIRED/>{{form.telefonoCasa.errors}}
+        <input type="text" name="telefonoCasa" placeholder="Telefono Casa"  class="input-block-level" PATTERN="[0-9]{7}" />{{form.telefonoCasa.errors}}
 
-        <input type="text" required name="telefonoCel" placeholder="Telefono Celular" class="input-block-level" PATTERN="[0-9]{10}" REQUIRED/>{{form.telefonoCel.errors}}
+        <input type="text"  name="telefonoCel" placeholder="Telefono Celular" class="input-block-level" PATTERN="[0-9]{10}" />{{form.telefonoCel.errors}}
 
-        <input type="text" required name="idT"   placeholder="idT" class="input-block-level" >{{form.idT.errors}}
   
         <button class="btn btn-large btn-primary" type="submit">Registráte</button>
         

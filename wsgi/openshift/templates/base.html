@@ -331,14 +331,19 @@
                     <li class="nav-header">Mas</li>
                     <li><a href="/calificaciones/">Calificaciones</a></li>
                     <li><a href="/tareas/">Tareas</a></li>
-                    <li><a href="/foro/">Foro</a></li>
-
-                    {% if perms.calificaciones.add_personal%}
+                    
                     <li class="divider"></li>
                     <li class="nav-header">Direccion</li>
+                    {% if perms.calificaciones.add_tutor%}
                     <li><a href="/tutor/">Tutores</a></li>
+                    {% endif %} 
+                    {% if perms.calificaciones.ver_alumno%}
                     <li><a href="/alumno/">Alumnos</a></li>
+                    {% endif %} 
+                    {% if perms.calificaciones.add_personal%}
                     <li><a href="/personal/">Personal</a></li>
+                    {% endif %} 
+                    {% if perms.calificaciones.add_grupo%}
                     <li><a href="/grupo/">Grupos</a></li>
                     {% endif %} 
 
@@ -364,7 +369,7 @@
             
        			
             <p align="right" class="navbar-text">           
-            <a href="/cerrar/" class="navbar-link">{{user.username}}{{user.last_login}}</a></p>
+            <a href="/cerrar/" class="navbar-link">{{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;{{user.last_login}}</a></p>
           </div><!-- /.navbar-inner -->
        
         </div><!-- /.navbar -->
@@ -391,6 +396,8 @@
   </tr>
 </table>
 {% endblock %}
+
+
 
 {% block content %}
 {% endblock %}

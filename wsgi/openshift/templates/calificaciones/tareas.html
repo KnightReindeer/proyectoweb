@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Tareas ({{tareas.count}})
+{% endblock%}
+
+
+{% block content %}
+
+ <div class="well">
+<div class="panel panel-info">
+  <div class="panel-heading">
+  
+  {% if user.is_authenticated %}
+   <h3 class="panel-title">Tareas&nbsp;&nbsp;<span class="badge badge-info">{{tareas.count}}</span></h3>
+    
+  </div>
+  <div class="pagination">
+  <div class="panel-body">
+{% for tarea in tareas %}
+
+<ul class="thumbnails">
+  <li class="span6">
+    
+    {% if perms.calificaciones.delete_tarea%}
+    <div align="right"><img src="{{MEDIA_URL}}bootstrap/img/elimi.png" alt="" ></div>
+    {% endif %} 
+
+    <div class="thumbnail">    
+      <img src="" alt="">
+     <h3 class="text-info">{{tarea.titulo}} <small>&nbsp;{{tarea.fechapublica}}&nbsp;&nbsp;&nbsp;&nbsp;{{tarea.idgrupo}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <u><strong>Entrega:&nbsp;{{tarea.fechatarea}}</strong></u> </small></h3>
+      <hr style="color: #0056b2;" width="75%" align="center" />
+	
+
+     <blockquote>
+       <p> {{tarea.tarea}}</p>
+        <footer><cite>--<em>{{tarea.autor}}</em></cite></footer>
+     </blockquote>
+
+    </div>
+  </li>
+</ul>
+
+
+ {% endfor %}
+
+ {% if perms.calificaciones.add_tarea%}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<ul class="thumbnails">
+  <li class="span1">
+    <div class="thumbnail">
+    <a href="/creartareas/" ><img src="{{MEDIA_URL}}bootstrap/img/mas.png" alt=""></a>
+    </div>
+  </li>
+</ul>
+
+{% endif %} 
+
+</div>
+
+
+  
+
+{% else %}
+
+    <h2 class="form-signin-heading">Usted no esta autorizado</h2>
+    {% endif %}
+
+  </div>
+  
+
+</div>
+</div>
+
+
+
+{% endblock%}

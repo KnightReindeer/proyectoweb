@@ -10,7 +10,7 @@ Personal
   <div class="well">
 <div class="panel panel-info">
   <div class="panel-heading">
-  {% if user.is_authenticated %}
+   {% if perms.calificaciones.add_personal%}
    <h3 class="panel-title">Personal&nbsp;&nbsp;<span class="badge badge-info">{{personal.count}}</span></h3>
     
   </div>

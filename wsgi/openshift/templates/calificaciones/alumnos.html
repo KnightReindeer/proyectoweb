@@ -8,7 +8,8 @@ Alumnos{% endblock%}
   <div class="well">
 <div class="panel panel-info">
   <div class="panel-heading">
-  {% if user.is_authenticated %}
+  
+  {% if perms.calificaciones.ver_alumno%}
    <h3 class="panel-title">Alumnos&nbsp;&nbsp;<span class="badge badge-info">{{alumnos.count}}</span></h3>
     
   </div>
@@ -52,7 +53,10 @@ Alumnos{% endblock%}
           
  
     <td><a href="/"><i class="icon-pencil"></i></a> 
+    {% if perms.calificaciones.change_alumno%}
     <a href="/"><i class="icon-minus-sign"></i></a></td>
+    {% endif %}
+
     {% endfor %}
   </tr>
   
@@ -61,9 +65,9 @@ Alumnos{% endblock%}
   </tr>
 
 </tbody>
-
+   {% if perms.calificaciones.add_alumno%}
    <td><a href="/registraralumno/"><i class="icon-plus-sign"></a></td> 
-
+  {% endif %}
 </table>
 
 {% else %}
@@ -80,4 +84,3 @@ Alumnos{% endblock%}
 	
     
 {% endblock%}
-    

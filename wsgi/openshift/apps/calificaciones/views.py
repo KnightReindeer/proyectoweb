@@ -9,10 +9,11 @@ from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.decorators import login_required 
+from django.views.generic.base import TemplateResponseMixin
 from .forms import UserForm,UseraForm 
-
+from django.template import RequestContext
+from django.shortcuts import render, get_object_or_404
 # Create your views here.
 #@login_required()
 class registrarcalificaciones (CreateView):
@@ -100,8 +101,16 @@ class calificaciones(ListView):
 
 class alumno(ListView):
 	template_name = 'calificaciones/alumnos.html'
-	model= Alumno
 	context_object_name = 'alumnos'
+	def get_queryset(self):
+		consulta1=Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		if consulta1:
+			return consulta1
+		else:
+			return Alumno.objects.all().order_by("idgrupo")
+
+
+
 
 class personal(ListView):
 	template_name = 'calificaciones/personal.html'
@@ -117,5 +126,13 @@ class creartareas (CreateView):
 
 class tareas(ListView):
 	template_name = 'calificaciones/tareas.html'
-	model= Tarea
 	context_object_name = 'tareas'
+	def get_queryset(self):
+		query2=Tarea.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		query=Tarea.objects.filter(idgrupo__alumno__usuario__username=self.request.user)
+		if query:
+			return query 
+		if query2:
+			return query2
+		else:
+			return Tarea.objects.all

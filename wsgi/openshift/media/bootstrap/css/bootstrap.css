@@ -5557,7 +5557,9 @@ input[type="submit"].btn.btn-mini {
 .thumbnail {
   display: block;
   padding: 4px;
-  line-height: 20px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
   border: 1px solid #ddd;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;

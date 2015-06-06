@@ -18,8 +18,8 @@ class Personal(models.Model):
 	aingreescuela = models.CharField(max_length=6, blank=True)
 	aingrezona = models.CharField(max_length=6, blank=True)
 	fechanacimiento = models.DateField(blank=True, null=True)
-	rfc = models.CharField(max_length=50, blank=True)
-	cargo = models.CharField(max_length=50, blank=True)
+	rfc = models.CharField(max_length=50, blank=True, null=True)
+	cargo = models.CharField(max_length=50, blank=True, null=True, default="PROFESOR")
 	
 	def __unicode__(self):
 		return self.rfc
@@ -30,11 +30,10 @@ class Tutor(models.Model):
 	apellidoMt= models.CharField(max_length=50, blank=True)
 	ocupacion= models.CharField(max_length=50, blank=True)
 	direccion= models.CharField(max_length=50, blank=True)
-	telefonoCasa= models.CharField(max_length=50, blank=True)
-	telefonoCel= models.CharField(max_length=50, blank=True)
-	idT= models.CharField(max_length=50, blank=True)
+	telefonoCasa= models.CharField(max_length=50, null=True, blank=True)
+	telefonoCel= models.CharField(max_length=50, null=True, blank=True)
 	def __unicode__(self):
-		return self.idT
+		return unicode(self.apellidoPt)+ ' ' + str(self.apellidoMt)+ ' ' + str(self.nombreT)
 
 
 class Grupo(models.Model):
@@ -42,6 +41,7 @@ class Grupo(models.Model):
 	idprofesor = models.ForeignKey(Personal)
 	def __unicode__(self):
 		return self.gradogrupo
+
 
 class Alumno(models.Model):
 	usuario = models.OneToOneField(User)
@@ -57,6 +57,11 @@ class Alumno(models.Model):
 	idgrupo = models.ForeignKey(Grupo)
 	def __unicode__(self):
 		return unicode(self.apellidoPa)+ ' ' + str(self.apellidoMa)+ ' ' + str(self.nombrea)+ ' ' + str(self.curp)
+
+	class Meta:
+		permissions = (
+            ("ver_alumno", "Permiso para visualizar los datos de alumnos"),
+        )
 
 
 class Escuela(models.Model):
@@ -138,9 +143,18 @@ class Boleta1(models.Model):
 
 class Tarea(models.Model):
 	idgrupo=  models.ForeignKey(Grupo)
+	autor = models.CharField(max_length=50, blank=True)	
+	titulo = models.CharField(max_length=50, blank=True)	
+	fechapublica = models.DateField(blank=True, null=True, auto_now=True )
+	fechatarea= models.DateField(blank=True, null=True)
 	tarea = models.TextField(max_length=200, blank=True)	
-	#def __unicode__(self):
-	#	return self.idgrupo
+	
+	def __unicode__(self):
+		return unicode(self.idgrupo)+ ' ' +unicode(self.fechatarea) 
+	class Meta:
+		permissions = (
+            ("ver_tarea", "Permiso ver_tarea"),
+        )
 
 class Consejo(models.Model):
 	director=  models.ForeignKey(Personal)

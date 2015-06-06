@@ -7,12 +7,19 @@ class PersonalAdmin(admin.ModelAdmin):
 	ordering = ('rfc', 'usuario','nombre','fechanacimiento','cargo') 
 	search_fields = ('rfc','nombre','fechanacimiento') 
 
+class TareaAdmin(admin.ModelAdmin):
+	list_display = ('fechatarea','fechapublica','titulo') 
+	list_filter = ('fechatarea','fechapublica','titulo')
+	ordering = ('fechatarea','fechapublica','titulo') 
+	search_fields = ('fechatarea','tarea','fechapublica','titulo') 
+
+
 admin.site.register(Tutor)
 admin.site.register(Alumno)
 admin.site.register(Personal, PersonalAdmin)
 admin.site.register(Grupo)
 admin.site.register(Boleta1)
-admin.site.register(Tarea)
+admin.site.register(Tarea, TareaAdmin)
 admin.site.register(Escuela)
 
 

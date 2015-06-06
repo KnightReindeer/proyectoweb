@@ -1,13 +1,19 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
-from django.views.generic import TemplateView, FormView
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import CreateView,TemplateView,ListView,FormView
+from .models import Avisos
 
 # Create your views here.
-class avisos(TemplateView):
+class avisos(ListView):
 	template_name = 'pizarron/avisos.html'
+	model= Avisos
+	context_object_name = 'Avisos'
 
-class crearavisos(TemplateView):
+class crearavisos(CreateView):
 	template_name = 'pizarron/crearavisos.html'
+	model= Avisos
+	success_url= reverse_lazy('avisos')
 
 
 
