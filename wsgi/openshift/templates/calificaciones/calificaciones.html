@@ -7,17 +7,73 @@
 
 {% if user.is_authenticated %}
 
-{% if perms.calificaciones.add_boleta1%}
+
 
 <h2 class="form-signin-heading">Usted PUEDE CREAR BOLETAS</h2>
 
-{% else %}
+
 <h2 class="form-signin-heading">Usted SOLO puede VER </h2>
-{% endif %}
 
-{% else %}
-<h2 class="form-signin-heading">Usted no esta autorizado</h2>
+<div class="well">
+<div class="panel panel-info">
+  <div class="panel-heading">
+  
 
-{% endif %}
+   <h3 class="panel-title">Alumnos&nbsp;&nbsp;<span class="badge badge-info">{{alumnos.count}}</span></h3>
+    
+  </div>
+  <div class="panel-body">
+ 
+<table class="table table-bordered table-hover sortable-theme-bootstrap" data-sortable="true" data-toggle="table">
+
+    <thead>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+   
+  <tbody>
+
+  {% for calificacion in calificaciones %}
+  <tr class="info">
+        <td>{{calificacion.espanol1}}</td>
+        <td>{{calificacion.espanol2}}</td>
+        <td>{{calificacion.espanol3}}</td>
+        <td>{{calificacion.espanol4}}</td>
+        <td>{{calificacion.espanol5}}</td>
+        <td>{{promedio1}}</td>
+       
+
+  {% endfor %}
+
+    <td><a href="/calificaciones/"><i class="icon-pencil"></i></a> 
+ 
+    <a href="/"><i class="icon-minus-sign"></i></a></td>
+ 
+  
+<tr>
+ 
+  </tr>
+</tbody>
+   
+   <td><a href="/registraralumno/"><i class="icon-plus-sign"></a></td> 
+  
+</table>
+
+
+
+ {% endif %}
+
 
 {% endblock%}

@@ -94,20 +94,38 @@ class grupo(ListView):
 	context_object_name = 'grupos'
 
 class calificaciones(ListView):
-	template_name = 'calificaciones/calificaciones.html'
+	
 	model= Boleta1
 	context_object_name = 'calificaciones'
+	template_name = 'calificaciones/calificaciones.html'
+
+	def get_queryset(self):
+			return Boleta1.objects.all
+
+	def get_context_data(self, **kwargs):
+		context = super(calificaciones, self).get_context_data(**kwargs)
+		#context['promedio1'] = 
+		boleta1 = Boleta1()
+		context['promedio1'] = boleta1.espanolpromedio1()
+		#context['promedio1'] = str(50)
+		return context
 ####aqui mismose pueden crear la cantida de vistas que uno quiera
 
 class alumno(ListView):
 	template_name = 'calificaciones/alumnos.html'
 	context_object_name = 'alumnos'
+
 	def get_queryset(self):
-		consulta1=Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		consulta1=Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user).order_by("nombrea")
 		if consulta1:
 			return consulta1
 		else:
 			return Alumno.objects.all().order_by("idgrupo")
+
+	def get_context_data(self, **kwargs):
+		context = super(alumno, self).get_context_data(**kwargs)
+		#context['now'] = "hola variables!!!"
+		return context
 
 
 
@@ -136,3 +154,5 @@ class tareas(ListView):
 			return query2
 		else:
 			return Tarea.objects.all
+
+

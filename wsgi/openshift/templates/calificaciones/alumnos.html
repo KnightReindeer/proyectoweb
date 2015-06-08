@@ -52,7 +52,7 @@ Alumnos{% endblock%}
 
           
  
-    <td><a href="/"><i class="icon-pencil"></i></a> 
+    <td><a href="/calificaciones/"><i class="icon-pencil"></i></a> 
     {% if perms.calificaciones.change_alumno%}
     <a href="/"><i class="icon-minus-sign"></i></a></td>
     {% endif %}
@@ -63,17 +63,19 @@ Alumnos{% endblock%}
 <tr>
  
   </tr>
-
 </tbody>
    {% if perms.calificaciones.add_alumno%}
    <td><a href="/registraralumno/"><i class="icon-plus-sign"></a></td> 
   {% endif %}
 </table>
 
+
 {% else %}
 
     <h2 class="form-signin-heading">Usted no esta autorizado</h2>
     {% endif %}
+
+
 
   </div>
   
