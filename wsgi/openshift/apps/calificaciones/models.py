@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime    
-
+from django.forms import ModelForm
+from django import forms
 # Create your models here.
 
 class Personal(models.Model):
