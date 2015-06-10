@@ -93,6 +93,14 @@ class grupo(ListView):
 	model= Grupo
 	context_object_name = 'grupos'
 
+
+class actualizaralumno(UpdateView):
+	model= Alumno
+	context_object_name = 'alumno'
+	template_name = 'calificaciones/actualizaralumno.html'
+	#form_class = Boleta1Form
+	success_url = '/alumno/'
+
 class calificaciones(UpdateView):
 	model= Boleta1
 	context_object_name = 'calificaciones'

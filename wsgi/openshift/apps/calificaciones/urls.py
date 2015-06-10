@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from .views import calificaciones,vercalificaciones,calificaciones6,vercalificaciones5,vercalificaciones6,calificaciones5,calificaciones2,calificaciones4,vercalificaciones4,calificaciones3,vercalificaciones2,vercalificaciones3,registrarcalificaciones,registraralumno,alumno,personal,eliminartarea,registrarpersonal,registrartutor,tutor,tareas,creartareas,grupo,registrargrupo
+from .views import calificaciones,vercalificaciones,actualizaralumno,calificaciones6,vercalificaciones5,vercalificaciones6,calificaciones5,calificaciones2,calificaciones4,vercalificaciones4,calificaciones3,vercalificaciones2,vercalificaciones3,registrarcalificaciones,registraralumno,alumno,personal,eliminartarea,registrarpersonal,registrartutor,tutor,tareas,creartareas,grupo,registrargrupo
 
 urlpatterns = patterns('',
 	url(r'^calificaciones/(?P<pk>[\w-]+)$', calificaciones.as_view(), name='calificaciones'),
@@ -21,6 +21,7 @@ urlpatterns = patterns('',
 
 	url(r'^registraralumno/$', registraralumno.as_view(), name='registraralumno'), 
 	url(r'^alumno/$', alumno.as_view(), name='alumno'),
+	url(r'^actualizaralumno/(?P<pk>[\w-]+)$', actualizaralumno.as_view(), name='actualizaralumno'),
 
 	url(r'^registrartutor/$', registrartutor.as_view(), name='registrartutor'), 
 	url(r'^tutor/$', tutor.as_view(), name='tutor'),
