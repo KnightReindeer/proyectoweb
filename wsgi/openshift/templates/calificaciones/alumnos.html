@@ -52,7 +52,7 @@ Alumnos{% endblock%}
 
           
  
-    <td><a href="/calificaciones/{{alumno.pk}}"><i class="icon-pencil"></i></a> 
+    <td><a href="/vercalificaciones{{alumno.idgrupo}}/"><i class="icon-pencil"></i></a> 
     {% if perms.calificaciones.change_alumno%}
     <a href="/"><i class="icon-minus-sign"></i></a></td>
     {% endif %}

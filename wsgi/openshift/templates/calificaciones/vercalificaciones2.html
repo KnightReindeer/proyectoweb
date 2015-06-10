@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+  
+  {% block title%}
+  Ver Calificaciones
+  {% endblock%}
+  
+  
+{% block content %}
+ {% if user.is_authenticated %}
+<div id="rootwizard" class="tabbable tabs-left">
+	
+	<ul>
+	{% if calificaciones %}
+	{% for calificacion in calificaciones %}
+	  	<li><a href="#{{calificacion.id}}" data-toggle="tab"><h6>{{calificacion.idalumno}}</h6></a></li>
+	{% endfor %}
+	{% else %}
+	  	<li><a href="#nada" data-toggle="tab">NADA</a></li>
+    {% endif %}
+	</ul>
+	
+
+
+	<div class="tab-content">
+	{% if calificaciones %}
+	{% for calificacion in calificaciones %}
+	    <div class="tab-pane" id="{{calificacion.id}}">
+	          <div class="panel-body">
+        <div class="well">
+  <div class="panel panel-info">
+   <div class="panel-heading">
+  
+     <h4>Datos de la escuela&nbsp;&nbsp;</h4>
+      {{calificacion.idescuela}}<strong>&nbsp;&nbsp;&nbsp;&nbsp;Ciclo escolar: {{calificacion.cicloescolar}}&nbsp;&nbsp;&nbsp;&nbsp;Grupo:{{calificacion.idgrupo}}</strong>
+ 
+     <h4 class="panel-title">Calificaciones&nbsp;&nbsp;<span class="badge badge-info"></span></h4>
+    
+  </div>
+
+ <div class="panel-body">
+<table class="table table-bordered table-hover sortable-theme-bootstrap" class="span3" data-sortable="true" data-toggle="table" style="background:#FFFFFF">
+
+    <thead style="background:#D3D3D3">
+    <tr>
+    <td style="background:#A4A4A4" class="span3"><strong>ASIGNATURAS</strong></td>
+    <td class="span1"><strong>I</strong></td>
+    <td class="span1"><strong>II</strong></td>
+    <td class="span1"><strong>III</strong></td>
+    <td class="span1"><strong>IV</strong></td>
+    <td class="span1"><strong>V</strong></td>
+    <td style="background:#A4A4A4" class="span1"><strong><p>PROMEDIO</p>
+    <p>FINAL</p></strong></td>
+  </tr>
+    </thead>
+
+  <tbody>
+  <tr>
+    <td><strong>ESPAÑOL</strong></td>
+    <td>{{calificacion.espanol1}}</td>
+    <td>{{calificacion.espanol2}}</td>
+    <td>{{calificacion.espanol3}}</td>
+    <td>{{calificacion.espanol4}}</td>
+    <td>{{calificacion.espanol5}}</td>
+    <td>{{calificacion.espanolpromedio}}</td>
+  </tr>
+  <tr>
+    <td><strong>MATEMATICAS</strong></td>
+    <td>{{calificacion.matematicas1}}</td>
+    <td>{{calificacion.matematicas2}}</td>
+    <td>{{calificacion.matematicas3}}</td>
+    <td>{{calificacion.matematicas4}}</td>
+    <td>{{calificacion.matematicas5}}</td>
+    <td>{{calificacion.matematicaspromedio}}</td>
+  </tr>
+  <tr>
+    <td><strong>EXPLORACION DE LA NATURALEZA Y LA SOCIEDAD</strong></td>
+    <td>{{calificacion.exploracion1}}</td>
+    <td>{{calificacion.exploracion2}}</td>
+    <td>{{calificacion.exploracion3}}</td>
+    <td>{{calificacion.exploracion4}}</td>
+    <td>{{calificacion.exploracion5}}</td>
+    <td>{{calificacion.exploracionpromedio}}</td>
+  </tr>
+  <tr>
+    <td><strong>FORMACION CIVICA Y ETICA</strong></td>
+    <td>{{calificacion.formacion1}}</td>
+    <td>{{calificacion.formacion2}}</td>
+    <td>{{calificacion.formacion3}}</td>
+    <td>{{calificacion.formacion4}}</td>
+    <td>{{calificacion.formacion5}}</td>
+    <td>{{calificacion.formacionpromedio}}</td>
+  </tr>
+  <tr>
+    <td><strong>EDUCACION FISICA</strong></td>
+    <td>{{calificacion.fisica1}}</td>
+    <td>{{calificacion.fisica2}}</td>
+    <td>{{calificacion.fisica3}}</td>
+    <td>{{calificacion.fisica4}}</td>
+    <td>{{calificacion.fisica5}}</td>
+    <td>{{calificacion.fisicapromedio}}</td>
+  </tr>
+  <tr>
+    <td><strong>EDUCACION ARTISTICA</strong></td>
+    <td>{{calificacion.artistica1}}</td>
+    <td>{{calificacion.artistica2}}</td>
+    <td>{{calificacion.artistica3}}</td>
+    <td>{{calificacion.artistica4}}</td>
+    <td>{{calificacion.artistica5}}</td>
+    <td>{{calificacion.artisticapromedio}}</td>
+  </tr>
+  <tr>
+    <td style="background:#A4A4A4"><strong>INASISTENCIAS</strong></td>
+    <td>{{calificacion.inasistencias1}}</td>
+    <td>{{calificacion.inasistencias2}}</td>
+    <td>{{calificacion.inasistencias3}}</td>
+    <td>{{calificacion.inasistencias4}}</td>
+    <td>{{calificacion.inasistencias5}}</td>
+    <td>{{calificacion.inasistenciastotal}}</td>
+  </tr>
+  </tbody>
+</table>
+ {% if perms.calificaciones.change_boleta2%}
+  <div class="pagination pagination-right">
+  <a href="/calificaciones2/{{calificacion.pk}}"><button class="btn btn-large btn-primary" type="submit">Editar</button></a>
+    </div>
+			
+{%endif%}
+
+ </div>
+ </div>
+ </div>
+</div>
+	    </div>
+	{% endfor %}
+	{% else %}
+	   <div class="tab-pane" id="nada">
+	   
+	       <h3> <p class="text-center"> No hay boletas a mostrar.</p>
+	    {% if perms.calificaciones.add_boleta1%}
+			<p class="text-center">Usted puede crear boletas</p></h3>
+			<div class="pagination pagination-centered">
+			<a href="/"><button class="btn btn-large btn-primary" type="submit">Crear</button></a>
+			</div>
+	    {%endif%}
+
+	    </div>
+{% endif %}
+		<ul class="pager wizard">
+			<li class="previous first" style="display:none;"><a href="#">First</a></li>
+			<li class="previous"><a href="#">Previous</a></li>
+			<li class="next last" style="display:none;"><a href="#">Last</a></li>
+		  	<li class="next"><a href="#">Next</a></li>
+		</ul>
+	</div>	
+</div>
+				
+	 <script src="{{MEDIA_URL}}bootstrap/js/jquery-latest.js"></script>
+    <script src="{{MEDIA_URL}}bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{MEDIA_URL}}bootstrap/js/jquery.bootstrap.wizard.js"></script>
+	<script src="{{MEDIA_URL}}bootstrap/js/prettify.js"></script>
+	<script>
+	$(document).ready(function() {
+	  	$('#rootwizard').bootstrapWizard({'tabClass': 'nav nav-tabs'});	
+		window.prettyPrint && prettyPrint()
+	});	
+	</script>
+
+ {% else %}
+
+    <h2 class="form-signin-heading">Usted no esta autorizado</h2>
+    {% endif %}
+
+  {% endblock%}
+  

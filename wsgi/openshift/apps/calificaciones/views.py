@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.generic import CreateView,TemplateView,ListView,FormView,UpdateView, DeleteView
-from .models import Boleta1,Boleta2, Tarea, Personal, Alumno, Tutor, Grupo
+from .models import Boleta1,Boleta2,Boleta3,Boleta4,Boleta5,Boleta6, Tarea, Personal, Alumno, Tutor, Grupo
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -100,7 +100,40 @@ class calificaciones(UpdateView):
 	#form_class = Boleta1Form
 	success_url = '/vercalificaciones/'
 
-####aqui mismose pueden crear la cantida de vistas que uno quiera
+class calificaciones2(UpdateView):
+	model= Boleta2
+	context_object_name = 'calificaciones'
+	template_name = 'calificaciones/calificaciones2.html'
+	#form_class = Boleta1Form
+	success_url = '/vercalificaciones2/'
+
+class calificaciones3(UpdateView):
+	model= Boleta3
+	context_object_name = 'calificaciones'
+	template_name = 'calificaciones/calificaciones3.html'
+	#form_class = Boleta1Form
+	success_url = '/vercalificaciones3/'
+
+class calificaciones4(UpdateView):
+	model= Boleta4
+	context_object_name = 'calificaciones'
+	template_name = 'calificaciones/calificaciones4.html'
+	#form_class = Boleta1Form
+	success_url = '/vercalificaciones4/'
+
+class calificaciones5(UpdateView):
+	model= Boleta5
+	context_object_name = 'calificaciones'
+	template_name = 'calificaciones/calificaciones5.html'
+	#form_class = Boleta1Form
+	success_url = '/vercalificaciones5/'
+
+class calificaciones6(UpdateView):
+	model= Boleta6
+	context_object_name = 'calificaciones'
+	template_name = 'calificaciones/calificaciones6.html'
+	#form_class = Boleta1Form
+	success_url = '/vercalificaciones6/'
 
 class vercalificaciones(ListView):
 	template_name = 'calificaciones/vercalificaciones.html'
@@ -121,6 +154,100 @@ class vercalificaciones(ListView):
 		#context['now'] = "hola variables!!!"
 		return context
 
+class vercalificaciones2(ListView):
+	template_name = 'calificaciones/vercalificaciones2.html'
+	context_object_name = 'calificaciones'
+
+	def get_queryset(self):
+		consulta1=Boleta2.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		consulta2=Boleta2.objects.filter(idgrupo__alumno__usuario__username=self.request.user, idalumno__usuario__username=self.request.user)
+		if consulta1:
+			return consulta1
+		elif consulta2:
+			return consulta2
+		#else:
+		#	return Boleta1.objects.all().order_by("idgrupo")
+
+	def get_context_data(self, **kwargs):
+		context = super(vercalificaciones2, self).get_context_data(**kwargs)
+		#context['now'] = "hola variables!!!"
+		return context
+
+class vercalificaciones3(ListView):
+	template_name = 'calificaciones/vercalificaciones3.html'
+	context_object_name = 'calificaciones'
+
+	def get_queryset(self):
+		consulta1=Boleta3.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		consulta2=Boleta3.objects.filter(idgrupo__alumno__usuario__username=self.request.user, idalumno__usuario__username=self.request.user)
+		if consulta1:
+			return consulta1
+		elif consulta2:
+			return consulta2
+		#else:
+		#	return Boleta1.objects.all().order_by("idgrupo")
+
+	def get_context_data(self, **kwargs):
+		context = super(vercalificaciones3, self).get_context_data(**kwargs)
+		#context['now'] = "hola variables!!!"
+		return context
+
+class vercalificaciones4(ListView):
+	template_name = 'calificaciones/vercalificaciones4.html'
+	context_object_name = 'calificaciones'
+
+	def get_queryset(self):
+		consulta1=Boleta4.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		consulta2=Boleta4.objects.filter(idgrupo__alumno__usuario__username=self.request.user, idalumno__usuario__username=self.request.user)
+		if consulta1:
+			return consulta1
+		elif consulta2:
+			return consulta2
+		#else:
+		#	return Boleta1.objects.all().order_by("idgrupo")
+
+	def get_context_data(self, **kwargs):
+		context = super(vercalificaciones4, self).get_context_data(**kwargs)
+		#context['now'] = "hola variables!!!"
+		return context
+
+class vercalificaciones5(ListView):
+	template_name = 'calificaciones/vercalificaciones5.html'
+	context_object_name = 'calificaciones'
+
+	def get_queryset(self):
+		consulta1=Boleta5.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		consulta2=Boleta5.objects.filter(idgrupo__alumno__usuario__username=self.request.user, idalumno__usuario__username=self.request.user)
+		if consulta1:
+			return consulta1
+		elif consulta2:
+			return consulta2
+		#else:
+		#	return Boleta1.objects.all().order_by("idgrupo")
+
+	def get_context_data(self, **kwargs):
+		context = super(vercalificaciones5, self).get_context_data(**kwargs)
+		#context['now'] = "hola variables!!!"
+		return context
+
+class vercalificaciones6(ListView):
+	template_name = 'calificaciones/vercalificaciones6.html'
+	context_object_name = 'calificaciones'
+
+	def get_queryset(self):
+		consulta1=Boleta6.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		consulta2=Boleta6.objects.filter(idgrupo__alumno__usuario__username=self.request.user, idalumno__usuario__username=self.request.user)
+		if consulta1:
+			return consulta1
+		elif consulta2:
+			return consulta2
+		#else:
+		#	return Boleta1.objects.all().order_by("idgrupo")
+
+	def get_context_data(self, **kwargs):
+		context = super(vercalificaciones6, self).get_context_data(**kwargs)
+		#context['now'] = "hola variables!!!"
+		return context
 
 class alumno(ListView):
 	template_name = 'calificaciones/alumnos.html'
