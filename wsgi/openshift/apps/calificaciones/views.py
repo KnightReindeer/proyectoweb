@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django.views.generic import CreateView,TemplateView,ListView,FormView
-from .models import Boleta1, Tarea, Personal, Alumno, Tutor, Grupo
+from django.views.generic import CreateView,TemplateView,ListView,FormView,UpdateView, DeleteView
+from .models import Boleta1,Boleta2, Tarea, Personal, Alumno, Tutor, Grupo
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -93,23 +93,34 @@ class grupo(ListView):
 	model= Grupo
 	context_object_name = 'grupos'
 
-class calificaciones(ListView):
-	
+class calificaciones(UpdateView):
 	model= Boleta1
 	context_object_name = 'calificaciones'
 	template_name = 'calificaciones/calificaciones.html'
+	#form_class = Boleta1Form
+	success_url = '/vercalificaciones/'
+
+####aqui mismose pueden crear la cantida de vistas que uno quiera
+
+class vercalificaciones(ListView):
+	template_name = 'calificaciones/vercalificaciones.html'
+	context_object_name = 'calificaciones'
 
 	def get_queryset(self):
-			return Boleta1.objects.all
+		consulta1=Boleta1.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		consulta2=Boleta1.objects.filter(idgrupo__alumno__usuario__username=self.request.user, idalumno__usuario__username=self.request.user)
+		if consulta1:
+			return consulta1
+		elif consulta2:
+			return consulta2
+		#else:
+		#	return Boleta1.objects.all().order_by("idgrupo")
 
 	def get_context_data(self, **kwargs):
-		context = super(calificaciones, self).get_context_data(**kwargs)
-		#context['promedio1'] = 
-		boleta1 = Boleta1()
-		context['promedio1'] = boleta1.espanolpromedio1()
-		#context['promedio1'] = str(50)
+		context = super(vercalificaciones, self).get_context_data(**kwargs)
+		#context['now'] = "hola variables!!!"
 		return context
-####aqui mismose pueden crear la cantida de vistas que uno quiera
+
 
 class alumno(ListView):
 	template_name = 'calificaciones/alumnos.html'
@@ -154,5 +165,10 @@ class tareas(ListView):
 			return query2
 		else:
 			return Tarea.objects.all
+
+class eliminartarea(DeleteView):
+	template_name = 'calificaciones/eliminartarea.html'
+	model = Tarea
+	success_url = reverse_lazy('tareas')
 
 

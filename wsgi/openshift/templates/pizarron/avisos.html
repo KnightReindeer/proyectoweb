@@ -8,6 +8,9 @@ Avisos  ({{Avisos.count}})
 
 {% block content %}
 
+{% load admin_urls %}
+
+
  <div class="well">
 <div class="panel panel-info">
   <div class="panel-heading">
@@ -24,11 +27,14 @@ Avisos  ({{Avisos.count}})
   <li class="span6">
     
     {% if perms.calificaciones.delete_avisos%}
-    <div align="right"><img src="{{MEDIA_URL}}bootstrap/img/elimi.png" alt="" ></div>
+    <div align="right">
+    <a href="{% url "eliminaraviso" pk=aviso.id %}" class="close">&times;</a>
+    </div>
     {% endif %} 
 
     <div class="thumbnail">    
       <img src="" alt="">
+
       <h3>{{aviso.titulo}}</h3>
         <p>{{aviso.fechaa}}<p>
         <p>{{aviso.texto}}</p>

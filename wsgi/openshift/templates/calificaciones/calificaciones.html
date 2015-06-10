@@ -44,18 +44,14 @@
     </thead>
    
   <tbody>
+<form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
+      {% csrf_token %} 
 
-  {% for calificacion in calificaciones %}
-  <tr class="info">
-        <td>{{calificacion.espanol1}}</td>
-        <td>{{calificacion.espanol2}}</td>
-        <td>{{calificacion.espanol3}}</td>
-        <td>{{calificacion.espanol4}}</td>
-        <td>{{calificacion.espanol5}}</td>
-        <td>{{promedio1}}</td>
-       
+  {{ form.as_p }}
 
-  {% endfor %}
+   <button class="btn btn-large btn-primary" type="submit">Actualizar</button>
+        
+    </form>
 
     <td><a href="/calificaciones/"><i class="icon-pencil"></i></a> 
  
