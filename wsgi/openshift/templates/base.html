@@ -329,7 +329,6 @@
 
                     <li class="divider"></li>
                     <li class="nav-header">Mas</li>
-                    <li><a href="/vercalificaciones/">Calificaciones</a></li>
                     <li><a href="/tareas/">Tareas</a></li>
                     
                     <li class="divider"></li>
@@ -337,9 +336,7 @@
                     {% if perms.calificaciones.add_tutor%}
                     <li><a href="/tutor/">Tutores</a></li>
                     {% endif %} 
-                    {% if perms.calificaciones.ver_alumno%}
                     <li><a href="/alumno/">Alumnos</a></li>
-                    {% endif %} 
                     {% if perms.calificaciones.add_personal%}
                     <li><a href="/personal/">Personal</a></li>
                     {% endif %} 

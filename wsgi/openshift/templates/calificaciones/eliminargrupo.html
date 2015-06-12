@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Eliminar Grupo 
+{% endblock%}
+
+
+{% block content %}
+
+
+<form action="" method="post">{% csrf_token %}
+    <div class="pagination-centered alert alert-danger" role="alert"><h1>¿Esta seguro en eliminar este grupo?</h1></div>
+
+<ul class="thumbnails">
+  <li class="span12">
+
+    <div class="thumbnail" align="center">
+      
+      <h3 align="center" class="text-info">{{object.gradogrupo}} </br> 
+        <u>{{object.idprofesor}}</u> </h3>
+      
+
+      <div align="center">
+       <button class="btn btn-large btn-primary" type="submit">Eliminar</button>
+       <a href="/grupo/" class="btn btn-default" role="button">Regresar</a></p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+ 
+</form>
+
+
+
+{% endblock%}

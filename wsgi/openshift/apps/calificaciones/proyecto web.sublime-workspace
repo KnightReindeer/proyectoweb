@@ -1,0 +1,910 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"consulta",
+				"consulta2"
+			],
+			[
+				"el",
+				"elif	elif"
+			],
+			[
+				"espanol",
+				"espanol2"
+			],
+			[
+				"espano",
+				"espanol1"
+			],
+			[
+				"nombre",
+				"nombrea"
+			],
+			[
+				"ALL",
+				"all	all"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"T",
+				"True	keyword"
+			],
+			[
+				"long",
+				"Clong"
+			],
+			[
+				"lon",
+				"lon2"
+			],
+			[
+				"l",
+				"lon2"
+			],
+			[
+				"ca",
+				"cadena	label"
+			],
+			[
+				"H",
+				"H1	Tag"
+			],
+			[
+				"registrar",
+				"registraralumno"
+			],
+			[
+				"m",
+				"msg5	label"
+			],
+			[
+				"res",
+				"res	label"
+			],
+			[
+				"re",
+				"res"
+			],
+			[
+				"mg",
+				"msg1	label"
+			],
+			[
+				"wxID_PYFLAPMENUARCHIVOA",
+				"wxID_PYFLAPMENUARCHIVOA10"
+			],
+			[
+				"wxID_PYFLAPMENUARCHIVOa",
+				"wxID_PYFLAPMENUARCHIVOA9"
+			],
+			[
+				"lpos",
+				"lpos"
+			],
+			[
+				"n",
+				"nmos"
+			],
+			[
+				"cl",
+				"clrlen"
+			],
+			[
+				"type",
+				"type	type"
+			],
+			[
+				"int",
+				"int"
+			],
+			[
+				"pr",
+				"println	println"
+			],
+			[
+				"c",
+				"clr"
+			],
+			[
+				"M",
+				"MsgError"
+			],
+			[
+				"id",
+				"idarchivo"
+			],
+			[
+				"lo",
+				"lon"
+			],
+			[
+				"bY",
+				"Bytes"
+			],
+			[
+				"len",
+				"len4"
+			],
+			[
+				"0x",
+				"0x9"
+			],
+			[
+				"ms",
+				"msg4"
+			],
+			[
+				"e",
+				"edi"
+			],
+			[
+				"es",
+				"esi"
+			],
+			[
+				"arre",
+				"arreglo"
+			],
+			[
+				"print",
+				"println"
+			],
+			[
+				"println",
+				"println	println"
+			],
+			[
+				"num",
+				"num4"
+			],
+			[
+				"pri",
+				"printf	printf"
+			],
+			[
+				"Media",
+				"MEDIA_URL"
+			],
+			[
+				"codigo",
+				"codigoboleta"
+			],
+			[
+				"render",
+				"render_to_response"
+			],
+			[
+				"__f",
+				"__file__	magic"
+			],
+			[
+				"utf",
+				"utf-8"
+			],
+			[
+				"numer",
+				"numero1"
+			],
+			[
+				"le",
+				"leng4"
+			],
+			[
+				"po",
+				"ports"
+			],
+			[
+				"pas",
+				"passs"
+			],
+			[
+				"otro",
+				"otrod"
+			],
+			[
+				"mundo",
+				"mundop"
+			],
+			[
+				"for",
+				"foreach"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/neomatrix/Descargas/pruebasWeb.txt",
+			"settings":
+			{
+				"buffer_size": 631,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views.py",
+			"settings":
+			{
+				"buffer_size": 11801,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/actualizartutor.html",
+			"settings":
+			{
+				"buffer_size": 671,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/tutor.html",
+			"settings":
+			{
+				"buffer_size": 1432,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "urls.py",
+			"settings":
+			{
+				"buffer_size": 3006,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					""
+				],
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					"Lein: Documentation"
+				],
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					"Lein: Clean"
+				],
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					"Lein: Run"
+				],
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					"Lein: Test"
+				],
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					"Lein: Re-test"
+				],
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					"Lein: Uberjar"
+				],
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					"Lein: Jar"
+				],
+				[
+					"Packages/Enhanced Clojure/Leiningen.sublime-build",
+					"Lein: Check"
+				]
+			],
+			[
+				"Packages/Enhanced Clojure/Leiningen.sublime-build",
+				"Lein: Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 369.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/neomatrix/c0de/proyectoweb",
+		"/home/neomatrix/c0de/proyectoweb/wsgi",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/calificaciones",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/inicio",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/pizarron",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/inicio",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/pizarron"
+	],
+	"file_history":
+	[
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/grupo.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/eliminargrupo.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/editargrupo.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/base.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/calificaciones/views.py",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/alumnos.html",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/tiposs.jl",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/racional.jl",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/Packages (1)",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/otroarchi.jl",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/metaprogramin.jl",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/hola_mundo.jl",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/arreglos.jl",
+		"/home/neomatrix/Descargas/pruebasWeb (1).txt",
+		"/home/neomatrix/Descargas/pruebasWeb.txt",
+		"/home/neomatrix/c0de/perl/email.pl",
+		"/home/neomatrix/c0de/proyectoweb/usar django",
+		"/home/neomatrix/c0de/proyectoweb/setup.py",
+		"/media/neomatrix/ARCHIVOS/DEV/10-million-combos.txt",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/calificaciones/admin.py",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/tutor.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/inicio/index.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/calificaciones/models.py",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/calificaciones.html",
+		"/home/neomatrix/Escritorio/you.pl",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/registrartareas.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/pizarron/models.py",
+		"/home/neomatrix/Escritorio/Carpeta sin título/generador.py",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/calificaciones/urls.py",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/tareas.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/pizarron/crearavisos.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/registrarpersonal.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/registraralumnos.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/pizarron/avisos.html",
+		"/home/neomatrix/Escritorio/elimarrrr",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/apps/pizarron/views.py",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/inicio/reglamento.html",
+		"/mquinavirtual",
+		"/home/neomatrix/Escritorio/eva",
+		"/home/neomatrix/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/media/neomatrix/ARCHIVOS/Violent Python - A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers.pdf",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/media/bootstrap/css/bootstrap.css",
+		"/home/neomatrix/.cache/.fr-SOuot4/bootstrap-3.3.4-dist/css/bootstrap.css",
+		"/home/neomatrix/Escritorio/bootstrap/css/bootstrap.css",
+		"/home/neomatrix/Escritorio/bootstrap/css/bootstrap-responsive.css",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/media/bootstrap/js/bootstrap.js",
+		"/home/neomatrix/Escritorio/bootstrap/js/bootstrap.js",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/registrartutor.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/registrargrupo.html",
+		"/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/personal.html",
+		"/home/neomatrix/Escritorio/estilo en sublimetext",
+		"/home/neomatrix/Escritorio/hospital",
+		"/home/neomatrix/Escritorio/generador.py",
+		"/home/neomatrix/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/neomatrix/.config/sublime-text-3/Packages/Seti_UI/Seti.sublime-theme",
+		"/home/neomatrix/.config/sublime-text-3/Cache/Theme - Default/Icon (CSS).tmPreferences",
+		"/opt/sublime_text/sublime.py",
+		"/opt/sublime_text/sublime_text.desktop",
+		"/home/neomatrix/.config/sublime-text-3/Local/Session.sublime_session",
+		"/home/neomatrix/Escritorio/replicacion postgres.txt",
+		"/home/neomatrix/Escritorio/Carpeta sin título/arrancar slave maria",
+		"/home/neomatrix/Escritorio/Carpeta sin título/pruebabash.txt",
+		"/home/neomatrix/Escritorio/base",
+		"/home/neomatrix/Escritorio/para la maquina con disco externo/replicacion postgres.txt",
+		"/media/neomatrix/NEOMATRIX/marias",
+		"/media/neomatrix/NEOMATRIX/montado",
+		"/home/neomatrix/Escritorio/nuevo/generador.py",
+		"/home/neomatrix/Escritorio/Documento sin título",
+		"/media/neomatrix/NEOMATRIX/Documento sin título",
+		"/home/neomatrix/Escritorio/config",
+		"/home/neomatrix/Escritorio/arrancar slave maria",
+		"/home/neomatrix/Escritorio/formulario",
+		"/home/neomatrix/Escritorio/marias",
+		"/home/neomatrix/ito/jflap/org/apache/batik/util/gui/MemoryMonitor.java",
+		"/home/neomatrix/ito/py.py",
+		"/home/neomatrix/ito/presentacion/analizador.jl",
+		"/home/neomatrix/ito/presentacion/py.py",
+		"/media/neomatrix/MULTIBOOT/py.py",
+		"/home/neomatrix/Escritorio/jflexnetbeans/Main.java",
+		"/home/neomatrix/Escritorio/jflexnetbeans/Lexer.java",
+		"/home/neomatrix/c0de/modulocompras/setup.py",
+		"/home/neomatrix/c0de/modulocompras/usar django",
+		"/tmp/.fr-KEL2pf/usar django",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/templates/inicio/index.html",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/apps/inicio/urls.py",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/apps/inicio/models.py",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/apps/inicio/admin.py",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/apps/inicio/api.py",
+		"/home/neomatrix/c0de/pagina webservice/setup.py",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/urls.py",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/settings.py",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/apps/inicio/views.py",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/templates/base.html",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/api.py",
+		"/home/neomatrix/Escritorio/pruebasegu.py",
+		"/home/neomatrix/c0de/pagina webservice/wsgi/openshift/manage.py",
+		"/home/neomatrix/Escritorio/ejemplotwiiter.py",
+		"/home/neomatrix/Escritorio/Lexico.cpp",
+		"/home/neomatrix/Escritorio/temassublime",
+		"/home/neomatrix/Escritorio/twitter.py",
+		"/home/neomatrix/Escritorio/institutos.acad-tecnm.mx/eventos/innovacion/administrador/system.php?menu=1300",
+		"/home/neomatrix/Escritorio/tipo uget",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/go/opera.jl",
+		"/media/neomatrix/ARCHIVOS/DEV/clojure/revisar.clj",
+		"/media/neomatrix/ARCHIVOS/DEV/bat/vigilante.bat",
+		"/media/neomatrix/ARCHIVOS/DEV/bat/sinconizar.txt",
+		"/media/neomatrix/ARCHIVOS/DEV/julia/manual",
+		"/media/neomatrix/ARCHIVOS/TRABAJOS DEL ITO/ing de software/nettle.txt",
+		"/media/neomatrix/ARCHIVOS/TRABAJOS DEL ITO/automatas I/presentacion/py.py",
+		"/media/neomatrix/MULTIBOOT/Lexico.cpp",
+		"/media/neomatrix/ARCHIVOS/DEV/clojure/clase4.clj",
+		"/media/neomatrix/ARCHIVOS/DEV/clojure/clase1.clj",
+		"/media/neomatrix/ARCHIVOS/DEV/clojure/clase2.clj",
+		"/media/neomatrix/ARCHIVOS/DEV/clojure/clase3.clj",
+		"/media/neomatrix/ARCHIVOS/DEV/clojure/holamundo.clj",
+		"/home/neomatrix/c0de/assescuela/snake.asm",
+		"/media/neomatrix/ARCHIVOS/TRABAJOS DEL ITO/automatas I/presentacion/py",
+		"/media/neomatrix/ARCHIVOS/DEV/python/compiladores/yacc.py",
+		"/home/neomatrix/Escritorio/FB2BA.rar.xml",
+		"/home/neomatrix/Descargas/The Curiosity Bits Blog Python Tutorial - Facebook Graph API V1.0 - getting posts and comments.py",
+		"/home/neomatrix/Escritorio/primaria_2.log",
+		"/home/neomatrix/c0de/hb.py",
+		"/home/neomatrix/Escritorio/url.txt",
+		"/home/neomatrix/Escritorio/hernandezblasantonio.nsupdate.info/pub/media/abd/replicacion/Taller Replicación MySQL/url.txt",
+		"/home/neomatrix/.config/sublime-text-3/Packages/User/java.sublime-build",
+		"/home/neomatrix/.config/sublime-text-3/Packages/User/python consola.sublime-build",
+		"/home/neomatrix/.config/sublime-text-3/Packages/User/asm en consola.sublime-build",
+		"/home/neomatrix/c0de/assescuela/borracho.asm"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"eliminarTutor",
+			"actualizaralumno",
+			"eliminartarea",
+			"actualizaralumno",
+			"alumno",
+			"No se pudo enviar este mensaje. Haz clic para enviar de nuevo.",
+			"no",
+			"No",
+			"print",
+			"th",
+			"        <",
+			"Alumno",
+			"alumno",
+			"hobby",
+			"hobbies",
+			"class",
+			"geografia",
+			"entidad",
+			"exploracion",
+			"matematicas",
+			"matematicas5",
+			"matematicas1",
+			"publisher",
+			"Publisher",
+			"publisher",
+			"Publisher",
+			"publisher",
+			"aviso",
+			"span6",
+			"span4",
+			"thumbnail",
+			".navbar .navbar-inner",
+			".navbar-inner",
+			".navbar-wrapper",
+			"navbar",
+			"onchange=",
+			"h2",
+			"p",
+			"contra",
+			"sha1",
+			"md5",
+			"ScriptLibrary",
+			"signo",
+			"OPERADOR",
+			"simbolo",
+			"identificador",
+			"’",
+			"translate_tabs_to_spaces",
+			"	\"",
+			"yacc",
+			"BDSM",
+			"raspitweet",
+			"mysqldump",
+			"=,",
+			"Postgress",
+			"pacientes",
+			"medicos",
+			"id_medico",
+			"paciente",
+			"medico",
+			"zapateria",
+			"carlas",
+			"carla",
+			"avd",
+			"_____",
+			"cali",
+			"dias",
+			"PrintString",
+			"car",
+			"Contenido",
+			"idarchivo",
+			"id",
+			"pass",
+			"new_user",
+			"{{user.username}}",
+			"Rever",
+			"Ruta",
+			"ima",
+			"BASE_DIR",
+			"error",
+			"NameError:",
+			"IntegerField",
+			"inaistenacias1",
+			"promedio",
+			"blank",
+			"IntegerField",
+			"()\n",
+			"()",
+			"idescuela",
+			"Alumno",
+			"alumno",
+			"Alumno",
+			"nombreT",
+			"registrartutor",
+			"tutor",
+			"Curp",
+			"curp",
+			"Correo",
+			"correo",
+			"Direccion",
+			"direccion",
+			"Telefono",
+			"telefono",
+			"clavepresupuestal",
+			"apellidom",
+			"apellidop",
+			"persona",
+			"registraralumno",
+			"persona",
+			"perfil",
+			"RFC",
+			"rfc",
+			"Direccion",
+			"direccion",
+			"Telefono",
+			"telefono",
+			"clavepresupuestal",
+			"apellidom",
+			"apellidop",
+			"alumnos",
+			"personal",
+			"registrarpersonal",
+			"alumno",
+			"name",
+			">\n",
+			"}}</",
+			"apellidop",
+			"persona"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/neomatrix/Descargas/pruebasWeb.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								154,
+								154
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11671,
+								11671
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5940.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/actualizartutor.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								417,
+								417
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/neomatrix/c0de/proyectoweb/wsgi/openshift/templates/calificaciones/tutor.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1244,
+								1244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								501,
+								501
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 249.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/IJulia/julia-build.sublime-build",
+	"project": "proyecto web.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 249.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

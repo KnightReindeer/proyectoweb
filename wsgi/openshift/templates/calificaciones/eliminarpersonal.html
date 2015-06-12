@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Eliminar personal 
+{% endblock%}
+
+
+{% block content %}
+
+
+<form action="" method="post">{% csrf_token %}
+    <div class="pagination-centered alert alert-danger" role="alert"><h1>¿Esta seguro en eliminar este personal?</h1></div>
+
+<ul class="thumbnails">
+  <li class="span12">
+
+    <div class="thumbnail" align="center">
+      
+      <h3 align="center" class="text-info">{{object.username}} </br>
+      {{object.personal.nombre}} {{object.personal.apellidop}} {{object.personal.apellidom}} </br>
+        {{object.personal.curp}} </br>
+        {{object.personal.cargo}} </h3>
+      
+
+      <div align="center">
+       <button class="btn btn-large btn-primary" type="submit">Eliminar</button>
+       <a href="/personal/" class="btn btn-default" role="button">Regresar</a></p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+ 
+</form>
+
+
+
+{% endblock%}

@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.generic import CreateView,TemplateView,ListView,FormView,UpdateView, DeleteView
 from .models import Boleta1,Boleta2,Boleta3,Boleta4,Boleta5,Boleta6, Tarea, Personal, Alumno, Tutor, Grupo
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -11,9 +12,10 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required 
 from django.views.generic.base import TemplateResponseMixin
-from .forms import UserForm,UseraForm 
+from .forms import UserForm,UseraForm,TareaForm
 from django.template import RequestContext
 from django.shortcuts import render, get_object_or_404
+
 # Create your views here.
 #@login_required()
 class registrarcalificaciones (CreateView):
@@ -78,6 +80,7 @@ class registrartutor (CreateView):
 	model= Tutor
 	success_url= reverse_lazy('registraralumno')
 
+
 class tutor(ListView):
 	template_name = 'calificaciones/tutor.html'
 	model= Tutor
@@ -92,6 +95,25 @@ class grupo(ListView):
 	template_name = 'calificaciones/grupo.html'
 	model= Grupo
 	context_object_name = 'grupos'
+
+class actualizartutor(UpdateView):
+	template_name = 'calificaciones/actualizartutor.html'
+	model= Tutor
+	context_object_name = 'tutor'
+	success_url = '/tutor/'
+
+class actualizarpersonal(UpdateView):
+	template_name = 'calificaciones/actualizarpersonal.html'
+	model= Personal
+	context_object_name = 'personal'
+	success_url = '/personal/'
+
+
+class editargrupo(UpdateView):
+	template_name = 'calificaciones/editargrupo.html'
+	model= Grupo
+	context_object_name = 'grupo'
+	success_url = '/grupo/'
 
 
 class actualizaralumno(UpdateView):
@@ -263,8 +285,11 @@ class alumno(ListView):
 
 	def get_queryset(self):
 		consulta1=Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user).order_by("nombrea")
+		consulta2=Alumno.objects.filter(idgrupo__alumno__usuario__username=self.request.user, usuario__username=self.request.user)
 		if consulta1:
 			return consulta1
+		elif consulta2:
+			return consulta2
 		else:
 			return Alumno.objects.all().order_by("idgrupo")
 
@@ -281,12 +306,13 @@ class personal(ListView):
 	model= Personal
 	context_object_name = 'personal'
 
+
 class creartareas (CreateView):
 	template_name = 'calificaciones/registrartareas.html'
 	model= Tarea
-	success_url= reverse_lazy('tareas') #una vez que se ha registrado el 
-								#formulario en la bd decide a donde 
-								#te mandara
+	context_object_name = 'tarea'
+	success_url= reverse_lazy('tareas')
+
 
 class tareas(ListView):
 	template_name = 'calificaciones/tareas.html'
@@ -307,3 +333,26 @@ class eliminartarea(DeleteView):
 	success_url = reverse_lazy('tareas')
 
 
+class eliminargrupo(DeleteView):
+	template_name = 'calificaciones/eliminargrupo.html'
+	model= Grupo
+	success_url = reverse_lazy('grupo')
+
+class eliminartutor(DeleteView):
+	template_name = 'calificaciones/eliminartutor.html'
+	model= Tutor
+	success_url = reverse_lazy('tutor')
+
+class eliminaralumno(DeleteView):
+	template_name = 'calificaciones/eliminaralumno.html'
+	model= User
+	slug_field = 'username'
+	slug_url_kwarg = 'username'
+	success_url = reverse_lazy('alumno')
+	
+class eliminarpersonal(DeleteView):
+	template_name = 'calificaciones/eliminarpersonal.html'
+	model= User
+	slug_field = 'username'
+	slug_url_kwarg = 'username'
+	success_url = reverse_lazy('personal')

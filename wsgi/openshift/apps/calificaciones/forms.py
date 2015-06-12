@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import  Tutor, Grupo
+from .models import  Tutor, Grupo, Tarea
 
 class UserForm(UserCreationForm):
 	nombre = forms.CharField(label = "NOMBRE")
@@ -31,5 +31,17 @@ class UseraForm(UserCreationForm):
 	tutor1 = forms.ModelChoiceField(queryset= Tutor.objects.all())
 	idgrupo = forms.ModelChoiceField(queryset= Grupo.objects.all())
 
+class TareaForm(UserCreationForm):
+	autor = forms.CharField(label = "AUTOR")
+	titulo = forms.CharField(label = "TITULO")
+	fechatarea = forms.DateField(label="FECHA DE TAREA")
+	tarea = forms.CharField(label = "TAREA")
+	idgrupo = forms.ModelChoiceField(queryset= Grupo.objects.none())
 
-	
+	def __init__(self, user, *args, **kwargs):
+		super(TareaForm, self).__init__(*args, **kwargs)
+		if user.is_superuser:
+			self.fields['Grupo'].queryset = Grupo.objects.all()
+		else:
+			self.fields['Grupo'].queryset = Grupo.objects.filter(idprofesor__usuario__username='usuario')
+

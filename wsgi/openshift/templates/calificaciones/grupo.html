@@ -6,23 +6,23 @@ Grupos
    
 
 {% block content %}
-  
-  <div class="well">
+
+  <div class="well  span12 ">
 <div class="panel panel-info">
   <div class="panel-heading">
   {% if user.is_authenticated %}
    <h3 class="panel-title">Grupos&nbsp;&nbsp;<span class="badge badge-info">{{grupos.count}}</span></h3>
     
   </div>
-  <div class="panel-body">
+  <div class="panel-body ">
  
 <table class="table table-bordered table-hover sortable-theme-bootstrap" data-sortable="true" data-toggle="table">
 
     <thead>
     <tr>
-        <th>grado grupo</th>
+        <th class="span2">grado grupo</th>
         <th>profesor</th>
-        <th></th>
+        <th class="span1"></th>
     </tr>
     </thead>
    
@@ -34,8 +34,12 @@ Grupos
         <td>{{grupo.idprofesor}}</td>
        </td>
           
-    <td><a href="/"><i class="icon-pencil"></i></a> 
-    <a href="/"><i class="icon-minus-sign"></i></a></td>
+    {% if perms.calificaciones.change_grupo%}
+    <td><a href="/editargrupo/{{grupo.pk}}"><i class="icon-pencil"></i></a> 
+    {%endif%}
+    {% if perms.calificaciones.delete_grupo%}
+    <a href="/eliminargrupo/{{grupo.pk}}/delete/"><i class="icon-minus-sign"></i></a></td>
+    {%endif%}
     {% endfor %}
   </tr>
   

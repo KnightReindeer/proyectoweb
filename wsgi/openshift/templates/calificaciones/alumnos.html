@@ -5,17 +5,17 @@ Alumnos{% endblock%}
    
 
 {% block content %}
-  <div class="well">
+  <div class="well span12">
 <div class="panel panel-info">
   <div class="panel-heading">
   
-  {% if perms.calificaciones.ver_alumno%}
+ {% if user.is_authenticated %}
    <h3 class="panel-title">Alumnos&nbsp;&nbsp;<span class="badge badge-info">{{alumnos.count}}</span></h3>
     
   </div>
-  <div class="panel-body">
+  <div class="panel-body ">
  
-<table class="table table-bordered table-hover sortable-theme-bootstrap" data-sortable="true" data-toggle="table">
+<table class="table table-bordered table-hover " data-sortable="true" data-toggle="table">
 
     <thead>
     <tr>
@@ -52,13 +52,16 @@ Alumnos{% endblock%}
 
           
  
-    <td><a href="/vercalificaciones{{alumno.idgrupo}}/"><i class="icon-book"></i></a> 
+    <td>
+    <a href="/vercalificaciones{{alumno.idgrupo}}/"><i class="icon-book"></i></a> 
     {% if perms.calificaciones.change_alumno%}
-    <a href="/actualizaralumno/{{alumno.pk}}"><i class="icon-pencil"></i></a></td>
+    <a href="/actualizaralumno/{{alumno.pk}}"><i class="icon-pencil"></i></a>
     {% endif %}
     {% if perms.calificaciones.delete_alumno%}
-    <a href="/"><i class="icon-minus-sign"></i></a></td>
+    <a href="/eliminaralumno/{{alumno.usuario}}/delete/"><i class="icon-minus-sign"></i></a>
     {% endif %}
+    </td>
+    
 
     {% endfor %}
   </tr>
@@ -73,9 +76,6 @@ Alumnos{% endblock%}
 </table>
 
 
-{% else %}
-
-    <h2 class="form-signin-heading">Usted no esta autorizado</h2>
     {% endif %}
 
 

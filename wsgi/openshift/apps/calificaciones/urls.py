@@ -1,5 +1,10 @@
 from django.conf.urls import patterns, include, url
-from .views import calificaciones,vercalificaciones,actualizaralumno,calificaciones6,vercalificaciones5,vercalificaciones6,calificaciones5,calificaciones2,calificaciones4,vercalificaciones4,calificaciones3,vercalificaciones2,vercalificaciones3,registrarcalificaciones,registraralumno,alumno,personal,eliminartarea,registrarpersonal,registrartutor,tutor,tareas,creartareas,grupo,registrargrupo
+from .views import calificaciones,vercalificaciones,actualizaralumno,calificaciones6,vercalificaciones5
+from .views import vercalificaciones6,calificaciones5,calificaciones2,calificaciones4,vercalificaciones4
+from .views import calificaciones3,vercalificaciones2,vercalificaciones3,registrarcalificaciones
+from .views import registraralumno,alumno,personal,eliminartarea,registrarpersonal,registrartutor,tutor
+from .views import tareas,creartareas,grupo,registrargrupo,editargrupo, eliminargrupo,actualizartutor
+from .views import eliminartutor,eliminaralumno,actualizarpersonal, eliminarpersonal
 
 urlpatterns = patterns('',
 	url(r'^calificaciones/(?P<pk>[\w-]+)$', calificaciones.as_view(), name='calificaciones'),
@@ -22,6 +27,9 @@ urlpatterns = patterns('',
 	url(r'^registraralumno/$', registraralumno.as_view(), name='registraralumno'), 
 	url(r'^alumno/$', alumno.as_view(), name='alumno'),
 	url(r'^actualizaralumno/(?P<pk>[\w-]+)$', actualizaralumno.as_view(), name='actualizaralumno'),
+	url(r'^actualizartutor/(?P<pk>[\w-]+)$', actualizartutor.as_view(), name='actualizartutor'),
+
+	url(r'^actualizarpersonal/(?P<pk>[\w-]+)$', actualizarpersonal.as_view(), name='actualizarpersonal'),
 
 	url(r'^registrartutor/$', registrartutor.as_view(), name='registrartutor'), 
 	url(r'^tutor/$', tutor.as_view(), name='tutor'),
@@ -31,9 +39,14 @@ urlpatterns = patterns('',
 
 
 	url(r'^registrarcalificaciones/', registrarcalificaciones.as_view(), name='registrarcalificaciones'),
+	url(r'^editargrupo/(?P<pk>[\w-]+)$', editargrupo.as_view(), name='editargrupo'),
 
 	url(r'^tareas/$', tareas.as_view(), name='tareas'),
 	url(r'^creartareas/$', creartareas.as_view(), name='creartareas'),
+	
 	url(r'^eliminartarea/(?P<pk>[\w-]+)/delete/$', eliminartarea.as_view(), name='eliminartarea'),
-   
+	url(r'^eliminargrupo/(?P<pk>[\w-]+)/delete/$', eliminargrupo.as_view(), name='eliminargrupo'),
+	url(r'^eliminartutor/(?P<pk>[\w-]+)/delete/$', eliminartutor.as_view(), name='eliminartutor'),
+	url(r'^eliminaralumno/(?P<username>[\w-]+)/delete/$', eliminaralumno.as_view(), name='eliminaralumno'),
+	url(r'^eliminarpersonal/(?P<username>[\w-]+)/delete/$', eliminarpersonal.as_view(), name='eliminarpersonal'),   
 )

@@ -16,8 +16,54 @@ Actualizar Alumno
         <h2 class="form-signin-heading">Actualizar Alumno</h2>
         
 
-         {{ form.as_p }}
-  
+
+
+
+         <form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
+      {% csrf_token %} 
+
+        
+        Tutor:&nbsp;&nbsp;&nbsp;&nbsp;{{form.tutor1}} &nbsp;&nbsp;<a href="/registrartutor/"><i class="icon-plus-sign"></i></a> &nbsp;&nbsp;&nbsp;
+
+        Grupo:&nbsp;&nbsp;&nbsp;&nbsp;{{form.idgrupo}}
+
+<div style="display:none;">
+      {{form.usuario}}
+</div>
+        Nombre:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" 
+          name="nombrea" class="input-block-level" value="{{alumno.nombrea}}"  />{{form.nombrea.errors}}
+
+        
+        Apellido paterno:<input type="text" 
+         name="apellidoPa" 
+         value="{{alumno.apellidoPa}}" />{{form.apellidoPa.errors}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Apellido Materno:<input type="text"  name="apellidoMa" value="{{alumno.apellidoMa}}" />{{form.apellidoMa.errors}}
+
+        Sexo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="sexo" class="form-control">
+        <option>MASCULINO</option>
+        <option>FEMENINO</option>
+        </select>{{form.sexo.errors}}
+
+        Correo:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name="correo" 
+        value="{{alumno.correo}}" />{{form.correo.errors}}
+
+        Curp:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name="curp" value="{{alumno.curp}}" />{{form.curp.errors}}
+
+        Nacimiento:{{form.fechanacimiento}}{{form.fechanacimiento.errors}}
+
+        RH:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="rh" class="form-control">
+        <option>RH O-</option>
+        <option>RH O+</option>
+        <option>RH A-</option>
+        <option>RH A+</option>
+        <option>RH B-</option>
+        <option>RH B+</option>
+        <option>RH AB-</option>
+        <option>RH AB+</option>
+        </select>{{form.rh.errors}}
+
+      
         <button class="btn btn-large btn-primary" type="submit">Guardar</button>
         
 		</form>

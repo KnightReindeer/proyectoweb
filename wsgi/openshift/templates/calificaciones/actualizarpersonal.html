@@ -1,0 +1,77 @@
+{% extends 'base.html' %} 
+
+{% block title%}
+Actualizar personal
+{% endblock%}
+   
+
+{% block content %}
+
+ <div class="container">
+{% if perms.calificaciones.change_personal%}
+
+		<form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
+      {% csrf_token %} 
+
+        <h2 class="form-signin-heading">Actualizar personal</h2>
+        
+
+
+
+
+         <form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
+      {% csrf_token %} 
+
+      
+<div style="display:none;">
+      {{form.usuario}}
+</div>
+        Nombre:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" 
+          name="nombre" class="input-block-level" value="{{personal.nombre}}"  />{{form.nombre.errors}}
+
+        
+        Apellido paterno:<input type="text" 
+         name="apellidop" 
+         value="{{personal.apellidop}}" />{{form.apellidop.errors}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Apellido Materno:<input type="text"  name="apellidom" value="{{personal.apellidom}}" />{{form.apellidom.errors}}
+
+
+        clavepresupuestal:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name="clavepresupuestal" 
+        value="{{personal.clavepresupuestal}}" />{{form.clavepresupuestal.errors}}
+&nbsp;&nbsp;&nbsp;&nbsp;
+        Telefono:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name="telefono" value="{{personal.telefono}}" />{{form.telefono.errors}}
+
+        Direccion:&nbsp;&nbsp;&nbsp;&nbsp;{{form.direccion}}{{form.direccion.errors}}
+
+        Correo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{form.correo}}{{form.correo.errors}}        
+        
+        Curp:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{form.curp}}{{form.curp.errors}} 
+</br>
+        ingreso a la sep:&nbsp;&nbsp;{{form.aingresep}}{{form.aingresep.errors}} 
+</br>
+        ingreso a la escuela:{{form.aingreescuela}}{{form.aingreescuela.errors}} 
+</br>
+        ingreso a la zona:{{form.aingrezona}}{{form.aingrezona.errors}} 
+</br>
+        fechanacimiento:{{form.fechanacimiento}}{{form.fechanacimiento.errors}} 
+</br>
+        Rfc:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{form.rfc}}{{form.rfc.errors}} 
+</br>
+        Cargo:&nbsp;&nbsp;&nbsp;&nbsp;{{form.cargo}}{{form.cargo.errors}} 
+      
+        <button class="btn btn-large btn-primary" type="submit">Guardar</button>
+        
+		</form>
+		{% else %}
+
+		<h2 class="form-signin-heading">Usted no esta autorizado</h2>
+		{% endif %}
+
+
+      
+
+    </div> <!-- /container -->
+	
+	
+{% endblock%}
