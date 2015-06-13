@@ -43,7 +43,7 @@ urlpatterns = patterns('',
 
 	url(r'^tareas/$', tareas.as_view(), name='tareas'),
 	url(r'^creartareas/$', creartareas.as_view(), name='creartareas'),
-	
+
 	url(r'^eliminartarea/(?P<pk>[\w-]+)/delete/$', eliminartarea.as_view(), name='eliminartarea'),
 	url(r'^eliminargrupo/(?P<pk>[\w-]+)/delete/$', eliminargrupo.as_view(), name='eliminargrupo'),
 	url(r'^eliminartutor/(?P<pk>[\w-]+)/delete/$', eliminartutor.as_view(), name='eliminartutor'),

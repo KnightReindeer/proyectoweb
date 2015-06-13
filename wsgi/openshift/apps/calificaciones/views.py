@@ -8,6 +8,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import Group
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required 
@@ -49,6 +50,12 @@ class registrarpersonal(FormView):
 		user = form.save()
 		perfil.usuario  = user
   		perfil.save()
+  		try:
+  			group = Group.objects.get(name='profesores')
+  		except Group.DoesNotExist:
+  			pass
+  		else:
+  			user.groups.add(group)
 		return super(registrarpersonal, self).form_valid(form)
 
 
@@ -120,49 +127,42 @@ class actualizaralumno(UpdateView):
 	model= Alumno
 	context_object_name = 'alumno'
 	template_name = 'calificaciones/actualizaralumno.html'
-	#form_class = Boleta1Form
 	success_url = '/alumno/'
 
 class calificaciones(UpdateView):
 	model= Boleta1
 	context_object_name = 'calificaciones'
 	template_name = 'calificaciones/calificaciones.html'
-	#form_class = Boleta1Form
 	success_url = '/vercalificaciones/'
 
 class calificaciones2(UpdateView):
 	model= Boleta2
 	context_object_name = 'calificaciones'
 	template_name = 'calificaciones/calificaciones2.html'
-	#form_class = Boleta1Form
 	success_url = '/vercalificaciones2/'
 
 class calificaciones3(UpdateView):
 	model= Boleta3
 	context_object_name = 'calificaciones'
 	template_name = 'calificaciones/calificaciones3.html'
-	#form_class = Boleta1Form
 	success_url = '/vercalificaciones3/'
 
 class calificaciones4(UpdateView):
 	model= Boleta4
 	context_object_name = 'calificaciones'
 	template_name = 'calificaciones/calificaciones4.html'
-	#form_class = Boleta1Form
 	success_url = '/vercalificaciones4/'
 
 class calificaciones5(UpdateView):
 	model= Boleta5
 	context_object_name = 'calificaciones'
 	template_name = 'calificaciones/calificaciones5.html'
-	#form_class = Boleta1Form
 	success_url = '/vercalificaciones5/'
 
 class calificaciones6(UpdateView):
 	model= Boleta6
 	context_object_name = 'calificaciones'
 	template_name = 'calificaciones/calificaciones6.html'
-	#form_class = Boleta1Form
 	success_url = '/vercalificaciones6/'
 
 class vercalificaciones(ListView):
@@ -356,3 +356,4 @@ class eliminarpersonal(DeleteView):
 	slug_field = 'username'
 	slug_url_kwarg = 'username'
 	success_url = reverse_lazy('personal')
+

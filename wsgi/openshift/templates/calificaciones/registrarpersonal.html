@@ -64,8 +64,13 @@ Registrar Personal
         <input type="text" required name="rfc"  placeholder="RFC" class="input-block-level" onkeypress="upperCase('rfc');">
         {{form.rfc.errors}}
 
-        <input type="text"  name="cargo"  placeholder="Cargo" class="input-block-level" onkeypress="upperCase('cargo');" value="PROFESOR" />
+
+
+<div style="display:none;">
+   <input type="text"  name="cargo"  placeholder="Cargo" class="input-block-level" onkeypress="upperCase('cargo');" value="PROFESOR" />
         {{form.cargo.errors}}
+</div>
+        
     
         <input type="password" required name="password1" placeholder="CONTRASEÑA" class="input-block-level" > 
         {{form.password1.errors}}
