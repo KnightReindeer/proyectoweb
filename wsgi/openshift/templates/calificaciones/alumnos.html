@@ -48,12 +48,15 @@ Alumnos{% endblock%}
         <td>{{alumno.fechanacimiento}}</td>
         <td>{{alumno.rh}}</td>
         <td>{{alumno.tutor1}}</td>
-        <td>{{alumno.idgrupo}}</td>
+        <td>{{alumno.idgrupo}}
+  
+    </td>
 
           
  
     <td>
     <a href="/vercalificaciones{{alumno.idgrupo}}/"><i class="icon-book"></i></a> 
+    
     {% if perms.calificaciones.change_alumno%}
     <a href="/actualizaralumno/{{alumno.pk}}"><i class="icon-pencil"></i></a>
     {% endif %}

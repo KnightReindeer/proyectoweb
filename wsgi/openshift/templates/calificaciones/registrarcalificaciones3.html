@@ -1,0 +1,146 @@
+{% extends 'base.html' %} 
+
+{% block title%}
+Crear Boleta 
+{% endblock%}
+
+
+{% block content %}
+
+{%if '3' in grupo|escape %}
+{%if alumnos.count > alumnose.count %}
+
+<form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
+      {% csrf_token %} 
+
+Folio: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input class="span2" id="id_codigoboleta" name="codigoboleta" type="text" />
+
+</br>
+
+Ciclo escolar: &nbsp;&nbsp;
+<input class="span2" id="id_cicloescolar" name="cicloescolar" type="text" />
+
+</br>
+
+Escuela: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select id="id_idescuela" name="idescuela">
+{% for e in escuela %}
+<option value="{{e.pk}}">{{e}}</option>
+{%endfor%}
+</select>
+
+Profesor: &nbsp;&nbsp;
+<select id="id_idprofesor" name="idprofesor">
+{% for p in profesor %}
+<option value="{{p.pk}}">{{p}}</option>
+{%endfor%}
+</select>
+
+
+Grupo: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select id="id_idgrupo" name="idgrupo">
+{% for dat in grupo %}
+<option value="{{dat.pk}}">{{dat}}</option>
+{%endfor%}
+</select>
+
+Alumno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<select id="id_idalumno" name="idalumno">
+{% for al in alumnos%}
+
+{%if forloop.counter > alumnose.count %}
+<option value="{{al.pk}}">{{al}}</option>
+{%endif%}
+
+{%endfor%}
+</select>
+
+
+
+<div style="display:none;">
+
+
+<p><label for="id_fechadevalidacion">Fechadevalidacion:</label> <input id="id_fechadevalidacion" name="fechadevalidacion" type="text" value="17/06/2015" /><input id="initial-id_fechadevalidacion" name="initial-fechadevalidacion" type="hidden" value="2015-06-17 15:39:00.144240" /></p>
+<p><label for="id_lugardevalidacion">Lugardevalidacion:</label> <input id="id_lugardevalidacion" maxlength="50" name="lugardevalidacion" type="text" value="-" /></p>
+<p><label for="id_promovido">Promovido:</label> <input id="id_promovido" name="promovido" type="checkbox" /></p>
+<p><label for="id_promedio">Promedio:</label> <input id="id_promedio" name="promedio" step="0.1" type="number" value="0.0" /></p>
+<p><label for="id_inasistencias1">Inasistencias1:</label> <input id="id_inasistencias1" name="inasistencias1" type="number" value="0" /></p>
+<p><label for="id_inasistencias2">Inasistencias2:</label> <input id="id_inasistencias2" name="inasistencias2" type="number" value="0" /></p>
+<p><label for="id_inasistencias3">Inasistencias3:</label> <input id="id_inasistencias3" name="inasistencias3" type="number" value="0" /></p>
+<p><label for="id_inasistencias4">Inasistencias4:</label> <input id="id_inasistencias4" name="inasistencias4" type="number" value="0" /></p>
+<p><label for="id_inasistencias5">Inasistencias5:</label> <input id="id_inasistencias5" name="inasistencias5" type="number" value="0" /></p>
+<p><label for="id_inasistenciastotal">Inasistenciastotal:</label> <input id="id_inasistenciastotal" name="inasistenciastotal" type="number" value="0" /></p>
+<p><label for="id_espanol1">Espanol1:</label> <input id="id_espanol1" name="espanol1" type="number" value="0" /></p>
+<p><label for="id_espanol2">Espanol2:</label> <input id="id_espanol2" name="espanol2" type="number" value="0" /></p>
+<p><label for="id_espanol3">Espanol3:</label> <input id="id_espanol3" name="espanol3" type="number" value="0" /></p>
+<p><label for="id_espanol4">Espanol4:</label> <input id="id_espanol4" name="espanol4" type="number" value="0" /></p>
+<p><label for="id_espanol5">Espanol5:</label> <input id="id_espanol5" name="espanol5" type="number" value="0" /></p>
+<p><label for="id_espanolpromedio">Espanolpromedio:</label> <input id="id_espanolpromedio" name="espanolpromedio" step="0.1" type="number" value="0.0" /></p>
+<p><label for="id_matematicas1">Matematicas1:</label> <input id="id_matematicas1" name="matematicas1" type="number" value="0" /></p>
+<p><label for="id_matematicas2">Matematicas2:</label> <input id="id_matematicas2" name="matematicas2" type="number" value="0" /></p>
+<p><label for="id_matematicas3">Matematicas3:</label> <input id="id_matematicas3" name="matematicas3" type="number" value="0" /></p>
+<p><label for="id_matematicas4">Matematicas4:</label> <input id="id_matematicas4" name="matematicas4" type="number" value="0" /></p>
+<p><label for="id_matematicas5">Matematicas5:</label> <input id="id_matematicas5" name="matematicas5" type="number" value="0" /></p>
+<p><label for="id_matematicaspromedio">Matematicaspromedio:</label> <input id="id_matematicaspromedio" name="matematicaspromedio" step="0.1" type="number" value="0.0" /></p>
+<p><label for="id_ciencias1">Ciencias1:</label> <input id="id_ciencias1" name="ciencias1" type="number" value="0" /></p>
+<p><label for="id_ciencias2">Ciencias2:</label> <input id="id_ciencias2" name="ciencias2" type="number" value="0" /></p>
+<p><label for="id_ciencias3">Ciencias3:</label> <input id="id_ciencias3" name="ciencias3" type="number" value="0" /></p>
+<p><label for="id_ciencias4">Ciencias4:</label> <input id="id_ciencias4" name="ciencias4" type="number" value="0" /></p>
+<p><label for="id_ciencias5">Ciencias5:</label> <input id="id_ciencias5" name="ciencias5" type="number" value="0" /></p>
+<p><label for="id_cienciaspromedio">Cienciaspromedio:</label> <input id="id_cienciaspromedio" name="cienciaspromedio" step="0.1" type="number" value="0.0" /></p>
+<p><label for="id_entidad1">Entidad1:</label> <input id="id_entidad1" name="entidad1" type="number" value="0" /></p>
+<p><label for="id_entidad2">Entidad2:</label> <input id="id_entidad2" name="entidad2" type="number" value="0" /></p>
+<p><label for="id_entidad3">Entidad3:</label> <input id="id_entidad3" name="entidad3" type="number" value="0" /></p>
+<p><label for="id_entidad4">Entidad4:</label> <input id="id_entidad4" name="entidad4" type="number" value="0" /></p>
+<p><label for="id_entidad5">Entidad5:</label> <input id="id_entidad5" name="entidad5" type="number" value="0" /></p>
+<p><label for="id_entidadpromedio">Entidadpromedio:</label> <input id="id_entidadpromedio" name="entidadpromedio" step="0.1" type="number" value="0.0" /></p>
+<p><label for="id_formacion1">Formacion1:</label> <input id="id_formacion1" name="formacion1" type="number" value="0" /></p>
+<p><label for="id_formacion2">Formacion2:</label> <input id="id_formacion2" name="formacion2" type="number" value="0" /></p>
+<p><label for="id_formacion3">Formacion3:</label> <input id="id_formacion3" name="formacion3" type="number" value="0" /></p>
+<p><label for="id_formacion4">Formacion4:</label> <input id="id_formacion4" name="formacion4" type="number" value="0" /></p>
+<p><label for="id_formacion5">Formacion5:</label> <input id="id_formacion5" name="formacion5" type="number" value="0" /></p>
+<p><label for="id_formacionpromedio">Formacionpromedio:</label> <input id="id_formacionpromedio" name="formacionpromedio" step="0.1" type="number" value="0.0" /></p>
+<p><label for="id_fisica1">Fisica1:</label> <input id="id_fisica1" name="fisica1" type="number" value="0" /></p>
+<p><label for="id_fisica2">Fisica2:</label> <input id="id_fisica2" name="fisica2" type="number" value="0" /></p>
+<p><label for="id_fisica3">Fisica3:</label> <input id="id_fisica3" name="fisica3" type="number" value="0" /></p>
+<p><label for="id_fisica4">Fisica4:</label> <input id="id_fisica4" name="fisica4" type="number" value="0" /></p>
+<p><label for="id_fisica5">Fisica5:</label> <input id="id_fisica5" name="fisica5" type="number" value="0" /></p>
+<p><label for="id_fisicapromedio">Fisicapromedio:</label> <input id="id_fisicapromedio" name="fisicapromedio" step="0.1" type="number" value="0.0" /></p>
+<p><label for="id_artistica1">Artistica1:</label> <input id="id_artistica1" name="artistica1" type="number" value="0" /></p>
+<p><label for="id_artistica2">Artistica2:</label> <input id="id_artistica2" name="artistica2" type="number" value="0" /></p>
+<p><label for="id_artistica3">Artistica3:</label> <input id="id_artistica3" name="artistica3" type="number" value="0" /></p>
+<p><label for="id_artistica4">Artistica4:</label> <input id="id_artistica4" name="artistica4" type="number" value="0" /></p>
+<p><label for="id_artistica5">Artistica5:</label> <input id="id_artistica5" name="artistica5" type="number" value="0" /></p>
+<p><label for="id_artisticapromedio">Artisticapromedio:</label> <input id="id_artisticapromedio" name="artisticapromedio" step="0.1" type="number" value="0.0" /></p>
+<p><label for="id_aviso1">Aviso1:</label> <input id="id_aviso1" name="aviso1" type="checkbox" /></p>
+<p><label for="id_aviso2">Aviso2:</label> <input id="id_aviso2" name="aviso2" type="checkbox" /></p>
+<p><label for="id_aviso3">Aviso3:</label> <input id="id_aviso3" name="aviso3" type="checkbox" /></p>
+
+
+</div>
+
+
+</br>
+</br>
+</br>
+
+<button class="btn btn-large btn-primary" type="submit">CREAR</button>
+        
+    </form>
+
+
+{%else%}
+
+
+<div class="pagination-centered alert alert-info" role="alert"><h3>Todos los alumnos han sido registrados</h3></div>
+
+
+{%endif%}
+
+{%else%}
+
+<h2 class="form-signin-heading">Usted no esta autorizado a crear boletas para este  grupo</h2>
+{%endif%}
+
+{%endblock%}

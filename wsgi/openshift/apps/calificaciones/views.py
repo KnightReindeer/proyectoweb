@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.generic import CreateView,TemplateView,ListView,FormView,UpdateView, DeleteView
-from .models import Boleta1,Boleta2,Boleta3,Boleta4,Boleta5,Boleta6, Tarea, Personal, Alumno, Tutor, Grupo
+from .models import Boleta1,Boleta2,Boleta3,Boleta4,Boleta5,Boleta6, Tarea, Personal, Alumno, Tutor, Grupo,Escuela
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render_to_response
@@ -15,6 +15,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateResponseMixin
 from .forms import UserForm,UseraForm,TareaForm
 from django.template import RequestContext
+
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
@@ -22,9 +23,94 @@ from django.shortcuts import render, get_object_or_404
 class registrarcalificaciones (CreateView):
 	template_name = 'calificaciones/registrarcalificaciones.html'
 	model= Boleta1
-	success_url= reverse_lazy('calificaciones') #una vez que se ha registrado el 
-								#formulario en la bd decide a donde 
-								#te mandara
+	success_url= reverse_lazy('alumno') 
+
+	def get_context_data(self, *args, **kwargs):
+		context = super(registrarcalificaciones, self).get_context_data(*args, **kwargs)
+		context['grupo'] = Grupo.objects.filter(idprofesor__usuario__username=self.request.user)
+		context['profesor'] = Personal.objects.filter(usuario__username=self.request.user)
+		context['escuela'] = Escuela.objects.all()
+		context['alumnos'] = Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		context['alumnose'] = Boleta1.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		
+		return context
+
+
+class registrarcalificaciones2 (CreateView):
+	template_name = 'calificaciones/registrarcalificaciones2.html'
+	model= Boleta2
+	success_url= reverse_lazy('alumno') 
+
+	def get_context_data(self, *args, **kwargs):
+		context = super(registrarcalificaciones2, self).get_context_data(*args, **kwargs)
+		context['grupo'] = Grupo.objects.filter(idprofesor__usuario__username=self.request.user)
+		context['profesor'] = Personal.objects.filter(usuario__username=self.request.user)
+		context['escuela'] = Escuela.objects.all()
+		context['alumnos'] = Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		context['alumnose'] = Boleta2.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+
+		return context
+
+class registrarcalificaciones3 (CreateView):
+	template_name = 'calificaciones/registrarcalificaciones3.html'
+	model= Boleta3
+	success_url= reverse_lazy('alumno') 
+
+	def get_context_data(self, *args, **kwargs):
+		context = super(registrarcalificaciones3, self).get_context_data(*args, **kwargs)
+		context['grupo'] = Grupo.objects.filter(idprofesor__usuario__username=self.request.user)
+		context['profesor'] = Personal.objects.filter(usuario__username=self.request.user)
+		context['escuela'] = Escuela.objects.all()
+		context['alumnos'] = Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		context['alumnose'] = Boleta3.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		
+		return context
+
+class registrarcalificaciones4 (CreateView):
+	template_name = 'calificaciones/registrarcalificaciones4.html'
+	model= Boleta4
+	success_url= reverse_lazy('alumno') 
+
+	def get_context_data(self, *args, **kwargs):
+		context = super(registrarcalificaciones4, self).get_context_data(*args, **kwargs)
+		context['grupo'] = Grupo.objects.filter(idprofesor__usuario__username=self.request.user)
+		context['profesor'] = Personal.objects.filter(usuario__username=self.request.user)
+		context['escuela'] = Escuela.objects.all()
+		context['alumnos'] = Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		context['alumnose'] = Boleta4.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		
+		return context
+
+class registrarcalificaciones5 (CreateView):
+	template_name = 'calificaciones/registrarcalificaciones5.html'
+	model= Boleta5
+	success_url= reverse_lazy('alumno') 
+
+	def get_context_data(self, *args, **kwargs):
+		context = super(registrarcalificaciones5, self).get_context_data(*args, **kwargs)
+		context['grupo'] = Grupo.objects.filter(idprofesor__usuario__username=self.request.user)
+		context['profesor'] = Personal.objects.filter(usuario__username=self.request.user)
+		context['escuela'] = Escuela.objects.all()
+		context['alumnos'] = Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		context['alumnose'] = Boleta5.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		
+		return context
+
+
+class registrarcalificaciones6 (CreateView):
+	template_name = 'calificaciones/registrarcalificaciones6.html'
+	model= Boleta6
+	success_url= reverse_lazy('alumno') 
+
+	def get_context_data(self, *args, **kwargs):
+		context = super(registrarcalificaciones6, self).get_context_data(*args, **kwargs)
+		context['grupo'] = Grupo.objects.filter(idprofesor__usuario__username=self.request.user)
+		context['profesor'] = Personal.objects.filter(usuario__username=self.request.user)
+		context['escuela'] = Escuela.objects.all()
+		context['alumnos'] = Alumno.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user)
+		context['alumnose'] = Boleta6.objects.filter(idgrupo__idprofesor__usuario__username=self.request.user, idprofesor__usuario__username=self.request.user).order_by("idalumno")
+		
+		return context
 
 class registrarpersonal(FormView):
 	template_name = 'calificaciones/registrarpersonal.html'
@@ -313,6 +399,11 @@ class creartareas (CreateView):
 	context_object_name = 'tarea'
 	success_url= reverse_lazy('tareas')
 
+	def get_context_data(self, *args, **kwargs):
+		context = super(creartareas, self).get_context_data(*args, **kwargs)
+		context['dato'] = Grupo.objects.filter(idprofesor__usuario__username=self.request.user)
+		return context
+
 
 class tareas(ListView):
 	template_name = 'calificaciones/tareas.html'
@@ -325,7 +416,7 @@ class tareas(ListView):
 		if query2:
 			return query2
 		else:
-			return Tarea.objects.all
+			return Tarea.objects.none
 
 class eliminartarea(DeleteView):
 	template_name = 'calificaciones/eliminartarea.html'

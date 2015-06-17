@@ -1,0 +1,141 @@
+{% extends 'base.html' %} 
+
+{% block title%}
+Crear Boleta 
+{% endblock%}
+
+
+{% block content %}
+
+
+{%if '1' in grupo|escape %}
+
+
+
+{%if alumnos.count > alumnose.count %}
+
+<form class="form-signin" method="POST" class="evento" action="#" id="evento" runat="server" enctype='multipart/from-data'>
+      {% csrf_token %} 
+
+Folio: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input class="span2" id="id_codigoboleta" name="codigoboleta" type="text" />
+
+</br>
+
+Ciclo escolar: &nbsp;&nbsp;
+<input class="span2" id="id_cicloescolar" name="cicloescolar" type="text" />
+
+</br>
+
+Escuela: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select id="id_idescuela" name="idescuela">
+{% for e in escuela %}
+<option value="{{e.pk}}">{{e}}</option>
+{%endfor%}
+</select>
+
+Profesor: &nbsp;&nbsp;
+<select id="id_idprofesor" name="idprofesor">
+{% for p in profesor %}
+<option value="{{p.pk}}">{{p}}</option>
+{%endfor%}
+</select>
+
+Grupo: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select id="id_idgrupo" name="idgrupo">
+{% for dat in grupo %}
+<option value="{{dat.pk}}">{{dat}}</option>
+{%endfor%}
+</select>
+
+Alumno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<select id="id_idalumno" name="idalumno">
+{% for al in alumnos%}
+
+{%if forloop.counter > alumnose.count %}
+<option value="{{al.pk}}">{{al}}</option>
+{%endif%}
+
+{%endfor%}
+</select>
+
+
+
+<div style="display:none;">
+
+Fechadevalidacion: <input id="id_fechadevalidacion" name="fechadevalidacion" type="text" value="16/06/2015" /><input id="initial-id_fechadevalidacion" name="initial-fechadevalidacion" type="hidden" value="2015-06-16 22:26:00.806652" />
+Lugardevalidacion: <input id="id_lugardevalidacion" maxlength="50" name="lugardevalidacion" type="text" value="-" />
+Promovido: <input id="id_promovido" name="promovido" type="checkbox" />
+Promedio: <input id="id_promedio" name="promedio" step="0.1" type="number" value="0.0" />
+Inasistencias1: <input id="id_inasistencias1" name="inasistencias1" type="number" value="0" />
+Inasistencias2: <input id="id_inasistencias2" name="inasistencias2" type="number" value="0" />
+Inasistencias3: <input id="id_inasistencias3" name="inasistencias3" type="number" value="0" />
+Inasistencias4: <input id="id_inasistencias4" name="inasistencias4" type="number" value="0" />
+Inasistencias5: <input id="id_inasistencias5" name="inasistencias5" type="number" value="0" />
+Inasistenciastotal: <input id="id_inasistenciastotal" name="inasistenciastotal" type="number" value="0" />
+Espanol1: <input id="id_espanol1" name="espanol1" type="number" value="0" />
+Espanol2: <input id="id_espanol2" name="espanol2" type="number" value="0" />
+Espanol3: <input id="id_espanol3" name="espanol3" type="number" value="0" />
+Espanol4: <input id="id_espanol4" name="espanol4" type="number" value="0" />
+Espanol5: <input id="id_espanol5" name="espanol5" type="number" value="0" />
+Espanolpromedio: <input id="id_espanolpromedio" name="espanolpromedio" step="0.1" type="number" value="0.0" />
+Matematicas1: <input id="id_matematicas1" name="matematicas1" type="number" value="0" />
+Matematicas2: <input id="id_matematicas2" name="matematicas2" type="number" value="0" />
+Matematicas3: <input id="id_matematicas3" name="matematicas3" type="number" value="0" />
+Matematicas4: <input id="id_matematicas4" name="matematicas4" type="number" value="0" />
+Matematicas5: <input id="id_matematicas5" name="matematicas5" type="number" value="0" />
+Matematicaspromedio: <input id="id_matematicaspromedio" name="matematicaspromedio" step="0.1" type="number" value="0.0" />
+Exploracion1: <input id="id_exploracion1" name="exploracion1" type="number" value="0" />
+Exploracion2: <input id="id_exploracion2" name="exploracion2" type="number" value="0" />
+Exploracion3: <input id="id_exploracion3" name="exploracion3" type="number" value="0" />
+Exploracion4: <input id="id_exploracion4" name="exploracion4" type="number" value="0" />
+Exploracion5: <input id="id_exploracion5" name="exploracion5" type="number" value="0" />
+Exploracionpromedio: <input id="id_exploracionpromedio" name="exploracionpromedio" step="0.1" type="number" value="0.0" />
+Formacion1: <input id="id_formacion1" name="formacion1" type="number" value="0" />
+Formacion2: <input id="id_formacion2" name="formacion2" type="number" value="0" />
+Formacion3: <input id="id_formacion3" name="formacion3" type="number" value="0" />
+Formacion4: <input id="id_formacion4" name="formacion4" type="number" value="0" />
+Formacion5: <input id="id_formacion5" name="formacion5" type="number" value="0" />
+Formacionpromedio: <input id="id_formacionpromedio" name="formacionpromedio" step="0.1" type="number" value="0.0" />
+Fisica1: <input id="id_fisica1" name="fisica1" type="number" value="0" />
+Fisica2: <input id="id_fisica2" name="fisica2" type="number" value="0" />
+Fisica3: <input id="id_fisica3" name="fisica3" type="number" value="0" />
+Fisica4: <input id="id_fisica4" name="fisica4" type="number" value="0" />
+Fisica5: <input id="id_fisica5" name="fisica5" type="number" value="0" />
+Fisicapromedio: <input id="id_fisicapromedio" name="fisicapromedio" step="0.1" type="number" value="0.0" />
+Artistica1: <input id="id_artistica1" name="artistica1" type="number" value="0" />
+Artistica2: <input id="id_artistica2" name="artistica2" type="number" value="0" />
+Artistica3: <input id="id_artistica3" name="artistica3" type="number" value="0" />
+Artistica4: <input id="id_artistica4" name="artistica4" type="number" value="0" />
+Artistica5: <input id="id_artistica5" name="artistica5" type="number" value="0" />
+Artisticapromedio: <input id="id_artisticapromedio" name="artisticapromedio" step="0.1" type="number" value="0.0" />
+Aviso1: <input id="id_aviso1" name="aviso1" type="checkbox" />
+Aviso2: <input id="id_aviso2" name="aviso2" type="checkbox" />
+Aviso3: <input id="id_aviso3" name="aviso3" type="checkbox" />
+
+</div>
+
+
+</br>
+</br>
+</br>
+
+<button class="btn btn-large btn-primary" type="submit">CREAR</button>
+        
+    </form>
+
+
+{%else%}
+
+
+<div class="pagination-centered alert alert-info" role="alert"><h3>Todos los alumnos han sido registrados</h3></div>
+
+
+{%endif%}
+
+{%else%}
+
+<h2 class="form-signin-heading">Usted no esta autorizado a crear boletas para este  grupo</h2>
+{%endif%}
+
+{% endblock%}

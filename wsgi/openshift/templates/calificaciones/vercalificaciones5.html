@@ -10,19 +10,19 @@
 <div id="rootwizard" class="tabbable tabs-left">
 	
 	<ul>
-	{% if calificaciones %}
+
 	{% for calificacion in calificaciones %}
 	  	<li><a href="#{{calificacion.id}}" data-toggle="tab"><h6>{{calificacion.idalumno}}</h6></a></li>
 	{% endfor %}
-	{% else %}
-	  	<li><a href="#nada" data-toggle="tab">NADA</a></li>
-    {% endif %}
+	
+	  	<li><a href="#nada" data-toggle="tab"><img src="{{MEDIA_URL}}bootstrap/img/agregarbol.png" alt=""></a></a></li>
+    
 	</ul>
 	
 
 
 	<div class="tab-content">
-	{% if calificaciones %}
+	
 	{% for calificacion in calificaciones %}
 	    <div class="tab-pane" id="{{calificacion.id}}">
 	          <div class="panel-body">
@@ -150,19 +150,19 @@
 </div>
 	    </div>
 	{% endfor %}
-	{% else %}
+	
 	   <div class="tab-pane" id="nada">
 	   
-	       <h3> <p class="text-center"> No hay boletas a mostrar.</p>
+	       <h3> 
 	    {% if perms.calificaciones.add_boleta5%}
 			<p class="text-center">Usted puede crear boletas</p></h3>
 			<div class="pagination pagination-centered">
-			<a href="/"><button class="btn btn-large btn-primary" type="submit">Crear</button></a>
+			<a href="/registrarcalificaciones5/"><button class="btn btn-large btn-primary" type="submit">Crear</button></a>
 			</div>
 	    {%endif%}
 
 	    </div>
-{% endif %}
+
 		<ul class="pager wizard">
 			<li class="previous first" style="display:none;"><a href="#">First</a></li>
 			<li class="previous"><a href="#">Previous</a></li>

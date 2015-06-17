@@ -19,10 +19,12 @@ Crear tareas
          <input type="text"  style="display:none"
         required  name="autor" placeholder="Autor" class="input-block-level" value= "{{user.personal.apellidop}}&nbsp;{{user.personal.apellidom}}&nbsp;{{user.personal.nombre}}" REQUIRED/>{{form.autor.errors}}
         
-        <input type="text"  
-        required  name=""  class="input-block-level" value= "{{user.personal.grupo.gradogrupo}}" />
-
-        {{form.idgrupo}}
+    
+      <select id="id_idgrupo" name="idgrupo">
+      {% for dat in dato %}
+      <option value="{{dat.pk}}">{{dat}}</option>
+      {%endfor%}
+      </select>
 
         <input type="text" 
         required  name="titulo" placeholder="Titulo de la tarea" class="input-block-level" onkeypress="upperCase('titulo');" REQUIRED/>{{form.titulo.errors}}

@@ -4,7 +4,7 @@ from .views import vercalificaciones6,calificaciones5,calificaciones2,calificaci
 from .views import calificaciones3,vercalificaciones2,vercalificaciones3,registrarcalificaciones
 from .views import registraralumno,alumno,personal,eliminartarea,registrarpersonal,registrartutor,tutor
 from .views import tareas,creartareas,grupo,registrargrupo,editargrupo, eliminargrupo,actualizartutor
-from .views import eliminartutor,eliminaralumno,actualizarpersonal, eliminarpersonal
+from .views import eliminartutor,eliminaralumno,actualizarpersonal, eliminarpersonal, registrarcalificaciones2,registrarcalificaciones3, registrarcalificaciones4, registrarcalificaciones5, registrarcalificaciones6
 
 urlpatterns = patterns('',
 	url(r'^calificaciones/(?P<pk>[\w-]+)$', calificaciones.as_view(), name='calificaciones'),
@@ -39,6 +39,16 @@ urlpatterns = patterns('',
 
 
 	url(r'^registrarcalificaciones/', registrarcalificaciones.as_view(), name='registrarcalificaciones'),
+	url(r'^registrarcalificaciones2/', registrarcalificaciones2.as_view(), name='registrarcalificaciones2'),
+	url(r'^registrarcalificaciones3/', registrarcalificaciones3.as_view(), name='registrarcalificaciones3'),
+	url(r'^registrarcalificaciones4/', registrarcalificaciones4.as_view(), name='registrarcalificaciones4'),
+
+
+	url(r'^registrarcalificaciones5/', registrarcalificaciones5.as_view(), name='registrarcalificaciones5'),
+
+	url(r'^registrarcalificaciones6/', registrarcalificaciones6.as_view(), name='registrarcalificaciones6'),
+
+	
 	url(r'^editargrupo/(?P<pk>[\w-]+)$', editargrupo.as_view(), name='editargrupo'),
 
 	url(r'^tareas/$', tareas.as_view(), name='tareas'),

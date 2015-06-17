@@ -27,7 +27,8 @@ Tareas ({{tareas.count}})
     {% if perms.calificaciones.delete_tarea%}
    
     <div align="right">
-    <a href="{% url "eliminartarea" pk=tarea.id %}" class="close">&times;</a>
+    <a href="{% url "eliminartarea" pk=tarea.id %}" ><img src="{{MEDIA_URL}}bootstrap/img/elimi.png" alt=""></a>
+ 
     </div>
     {% endif %} 
 
@@ -58,14 +59,8 @@ Tareas ({{tareas.count}})
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-
-<ul class="thumbnails">
-  <li class="span1">
-    <div class="thumbnail">
     <a href="/creartareas/" ><img src="{{MEDIA_URL}}bootstrap/img/mas.png" alt=""></a>
-    </div>
-  </li>
-</ul>
+ 
 
 {% endif %} 
 
