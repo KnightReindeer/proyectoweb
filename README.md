@@ -25,6 +25,17 @@ sure to back up your database w/ `rhc app snapshot save` first :) )
 
 With this you can install Django 1.6 on OpenShift.
 
+Running on Local
+--------------------
+```bash
+pip install Django==1.6.5
+pip install Unipath
+pip install Pillow
+cd /dir/proyectoweb/wsgi/openshift
+python manage.py runserver
+```
+
+
 Running on OpenShift
 --------------------
 
